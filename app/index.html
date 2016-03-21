@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#/brand">关于品牌</a></li>
+    <li><a href="#/prolist">关于产品</a></li>
+    <li><a href="#/where">我们的足迹</a></li>
+    <li><a href="#/explore">探索自然之旅</a></li>
+  </ul>
+
+
+  <div ng-view></div>
+
+  <div>Angular seed app: v<span app-version></span></div>
+
+  <script type="text/javascript" src="public/js/lib.js"></script>
+  <script src="app.js"></script>
+  <script type="text/javascript" src="public/js/ctrl-concat.js"></script>
+  <script type="text/javascript" src="components/version/version.js"></script>
+  <script type="text/javascript" src="components/version/version-directive.js"></script>
+  <script type="text/javascript" src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
