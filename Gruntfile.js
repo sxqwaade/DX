@@ -22,12 +22,13 @@ module.exports = function(grunt) {
                     '<%= dirs.destpath %>/app.css' : ['<%= dirs.destpath%>/*.css'],
                     'app/public/js/ctrl-concat.js':[
                         '<%= dirs.views %>/**/*.min.js'
-                    ]
-                    /*'app/public/js/lib.js':[
+                    ],
+                    'app/public/js/lib.js':[
                         '<%= dirs.public %>lib/flexible.min.js'
                         ,'<%= dirs.bower_components %>angular/angular.min.js'
                         ,'<%= dirs.bower_components %>angular-route/angular-route.min.js'
-                    ]*/
+                        ,'<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.js'
+                    ]
                 }
             }
         },
