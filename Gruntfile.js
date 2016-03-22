@@ -19,20 +19,15 @@ module.exports = function(grunt) {
             },
             holder:{
                 files: {
-                    'app/app.css' : ['<%= dirs.destpath%>*.css'],
+                    '<%= dirs.destpath %>/app.css' : ['<%= dirs.destpath%>/*.css'],
                     'app/public/js/ctrl-concat.js':[
-                        '<%= dirs.views %>/home/home.js',
-                        '<%= dirs.views %>/brand/brand.js',
-                        '<%= dirs.views %>/prolist/prolist.js',
-                        '<%= dirs.views %>/prodetail/prodetail.js',
-                        '<%= dirs.views %>/where/where.js',
-                        '<%= dirs.views %>/explore/explore.js'
-                    ],
-                    'app/public/js/lib.js':[
-                        '<%= dirs.public %>lib/flexible.min.js',
-                        '<%= dirs.bower_components %>angular/angular.min.js',
-                        '<%= dirs.bower_components %>angular-route/angular-route.min.js'
+                        '<%= dirs.views %>/**/*.min.js'
                     ]
+                    /*'app/public/js/lib.js':[
+                        '<%= dirs.public %>lib/flexible.min.js'
+                        ,'<%= dirs.bower_components %>angular/angular.min.js'
+                        ,'<%= dirs.bower_components %>angular-route/angular-route.min.js'
+                    ]*/
                 }
             }
         },
@@ -45,6 +40,23 @@ module.exports = function(grunt) {
                     '<%= dirs.destpath%>common.css': 'app/public/sass/common.scss',       // 'destination': 'source'
                     '<%= dirs.destpath%>home.css': 'app/views/home/home.scss'
                 }
+            }
+        },
+        cssmin: {
+            options: {
+                report: 'gzip',
+                banner: '/** \n' +
+                ' * @Description: <%= pkg.name%> \n' +
+                ' * @author: <%= pkg.author%> \n' +
+                ' * @Update: <%= grunt.template.today("yyyy-mm-dd HH:mm") %> \n' +
+                ' */ \n\n'
+            },
+            minify: {
+                expand: true,
+                cwd: 'app/public/dest/',
+                src: ['**/*.css', '!**/*.min.css'],
+                dest: 'app/public/dest/',
+                ext: '.min.css'
             }
         },
         uglify: {
@@ -62,15 +74,13 @@ module.exports = function(grunt) {
             },
             holder: {
                 files: {
-                    '<%= dirs.public %>/dest/app.min.css': ['<%= dirs.public%>/dest/app.css'],
-                    '<%= dirs.public %>/lib/flexible.min.js': ['<%= dirs.public %>/lib/flexible.js'],
+                    /*'<%= dirs.public %>/lib/flexible.min.js': ['<%= dirs.public %>/lib/flexible.js'],*/
                     '<%= dirs.views %>/home/home.min.js': ['<%= dirs.views %>/home/home.js'],
                     '<%= dirs.views %>/brand/brand.min.js': ['<%= dirs.views %>/brand/brand.js'],
                     '<%= dirs.views %>/prolist/prolist.min.js': ['<%= dirs.views %>/prolist/prolist.js'],
                     '<%= dirs.views %>/prodetail/prodetail.min.js': ['<%= dirs.views %>/prodetail/prodetail.js'],
                     '<%= dirs.views %>/where/where.min.js': ['<%= dirs.views %>/where/where.js'],
-                    '<%= dirs.views %>/explore/explore.min.js': ['<%= dirs.views %>/explore/explore.js'],
-                    '<%= dirs.public %>js/ctrl-concat.min.js':['<%= dirs.public %>js/ctrl-concat.js']
+                    '<%= dirs.views %>/explore/explore.min.js': ['<%= dirs.views %>/explore/explore.js']
                 }
             }
         },
@@ -91,11 +101,12 @@ module.exports = function(grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['sass','concat:holder','uglify:holder']);
+    grunt.registerTask('default', ['sass','uglify:holder','concat:holder','cssmin']);
 
 
 };
