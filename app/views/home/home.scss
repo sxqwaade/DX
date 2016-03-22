@@ -1,3 +1,15 @@
-p{
-  font-size: 5rem;
+@import "../../public/sassCore/base";
+@import "../../public/sassCore/function";
+$img_path:"../../views/home/images";
+@include animate-fadeIn;
+.index-page{
+  width: pxToRem(750);
+  height: 100%;
+  background: url("#{$img_path}/index_bg.jpg") no-repeat center top transparent;
+  background-size: (auto 100%);
+}
+@include iphone4{
+  .index-page{
+    background-size: (100%)!important;
+  }
 }

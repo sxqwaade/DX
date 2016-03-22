@@ -536,7 +536,7 @@ $flexMid:                     true !default; //用于ie10 -ms前缀
 
 // 为animate模块设计
 %animated {
-  @include animation-duration(1s);
+  @include animation-duration(0.7s);
   @include animation-fill-mode(both);
 }
 

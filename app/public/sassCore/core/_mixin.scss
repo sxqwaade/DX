@@ -337,6 +337,11 @@
   @return ($px / $base) * 1em;
 }
 
+// px转em
+@function pxToRem($px, $base: 46.875) {
+  @return ($px / $base) * 1rem;
+}
+
 // 为颜色添加白色，以百分比形式
 @function tint($color, $percent){
   @return mix(white, $color, $percent);

@@ -1,3 +1,9 @@
+/** 
+ * @Description: DX 
+ * @author: songxiaoqiang 
+ * @Update: 2016-03-23 00:03 
+ */ 
+
 body .nav-content .fadeInRightBig {
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
@@ -525,3 +531,35 @@ body .nav-content.show .nav-list {
     background-image: url("/public/images/logo_2X.png") !important; } }
 
 /*# sourceMappingURL=common.css.map */
+
+.fadeIn {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+.index-page {
+  width: 16rem;
+  height: 100%;
+  background: url("../../views/home/images/index_bg.jpg") no-repeat center top transparent;
+  background-size: auto 100%; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  .index-page {
+    background-size: 100% !important; } }
+
+/*# sourceMappingURL=home.css.map */

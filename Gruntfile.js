@@ -19,23 +19,24 @@ module.exports = function(grunt) {
             },
             holder:{
                 files: {
-                    '<%= dirs.destpath %>/app.css' : ['<%= dirs.destpath%>/*.css'],
-                    'app/public/js/ctrl-concat.js':[
-                        '<%= dirs.views %>/**/*.min.js'
+                    '<%= dirs.public %>/app.css' : ['<%= dirs.destpath%>/common.css','<%= dirs.destpath%>/home.css']
+                    /*'app/public/js/ctrl-concat.js':[
+                        '<%= dirs.views %>/!**!/!*.min.js'
                     ],
                     'app/public/js/lib.js':[
                         '<%= dirs.public %>lib/flexible.min.js'
                         ,'<%= dirs.bower_components %>angular/angular.min.js'
                         ,'<%= dirs.bower_components %>angular-route/angular-route.min.js'
                         ,'<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.js'
-                    ]
+                    ]*/
                 }
             }
         },
         sass: {                              // Task
             dist: {                            // Target
                 options: {                       // Target options
-                    style: 'expand'
+                    style: 'expand',
+                    noCache:true
                 },
                 files: {                         // Dictionary of files
                     '<%= dirs.destpath%>common.css': 'app/public/sass/common.scss',       // 'destination': 'source'
@@ -55,7 +56,7 @@ module.exports = function(grunt) {
             minify: {
                 expand: true,
                 cwd: 'app/public/dest/',
-                src: ['**/*.css', '!**/*.min.css'],
+                src: ['*.css'],
                 dest: 'app/public/dest/',
                 ext: '.min.css'
             }
@@ -69,13 +70,13 @@ module.exports = function(grunt) {
                 ' * @Update: <%= grunt.template.today("yyyy-mm-dd HH:mm") %> \n' +
                 ' */ \n\n',
                 beautify: {
-                    //ÖÐÎÄascii»¯£¬·Ç³£ÓÐÓÃ£¡·ÀÖ¹ÖÐÎÄÂÒÂëµÄÉñÅäÖÃ
+                    //ï¿½ï¿½ï¿½ï¿½asciiï¿½ï¿½ï¿½ï¿½ï¿½Ç³ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                     ascii_only: true
                 }
             },
             holder: {
                 files: {
-                    /*'<%= dirs.public %>/lib/flexible.min.js': ['<%= dirs.public %>/lib/flexible.js'],*/
+                    '<%= dirs.public %>/lib/flexible.min.js': ['<%= dirs.public %>/lib/flexible.js'],
                     '<%= dirs.views %>/home/home.min.js': ['<%= dirs.views %>/home/home.js'],
                     '<%= dirs.views %>/brand/brand.min.js': ['<%= dirs.views %>/brand/brand.js'],
                     '<%= dirs.views %>/prolist/prolist.min.js': ['<%= dirs.views %>/prolist/prolist.js'],
@@ -90,9 +91,9 @@ module.exports = function(grunt) {
                 files:[
                     'app/views/**/*.scss'
                     ,'app/public/sass/*.scss'
-                    ,'app/public/dest/*.css'
-                    ,'app/public/**/*.js'
-                    ,'app/views/**/*.js'
+                    ,'app/public/dest/*.min.css'
+                    /*,'app/public/!**!/!*.js'
+                    ,'app/views/!**!/!*.js'*/
                 ],
                 tasks:['default'],
                 options: {
@@ -107,7 +108,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['sass','uglify:holder','concat:holder','cssmin']);
+    grunt.registerTask('default', ['sass','cssmin','concat:holder']);
 
 
 };

@@ -1,7 +1,7 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-22 16:03 
+ * @Update: 2016-03-22 23:03 
  */ 
 
 "use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",[function(){}]);

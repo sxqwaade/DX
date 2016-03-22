@@ -1,5 +1,118 @@
 @import "../sassCore/base";
+@import "../sassCore/function";
+@import "../sassCore/core/reset";
+$img_path:"/public/images";
 
+html{
+  height: 100%;
+}
+body {
+  position: relative;
+  height: 100%;
+  .view-content {
+    z-index: 0;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+  }
+
+  .logo {
+    width: pxToRem(148);
+    height: pxToRem(111);
+    position: absolute;
+    top: pxToRem(45);
+    left: pxToRem(42);
+    background: url('#{$img_path}/logo.png') no-repeat center top transparent;
+    @include background-size(contain);
+    z-index: 99;
+  }
+  .nav {
+    width: pxToRem(64);
+    height: pxToRem(54);
+    position: absolute;
+    z-index: 99;
+    top: pxToRem(70);
+    right: pxToRem(47);
+    background: url("#{$img_path}/icon_menu.png") no-repeat center top transparent;
+    @include background-size(contain);
+  }
+  .nav-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .nav-close {
+      width: pxToRem(25);
+      height: pxToRem(26);
+      position: absolute;
+      top: pxToRem(72);
+      right: pxToRem(45);
+      background: url("#{$img_path}/arrows_remove.png") no-repeat center top transparent;
+      @include background-size(contain);
+      z-index: 99;
+    }
+    .nav-list {
+      display: block;
+      width: pxToRem(520);
+      height: 100%;
+      padding-top: pxToRem(130);
+      background-color: #FFFFFF;
+      position: absolute;
+      right: 0;
+      top: 0;
+      $transplateX: pxToRem(2000);
+      @include transform(translateX($transplateX));
+      opacity: 0;
+      visibility: hidden;
+      @include box-sizing(border-box);
+      li {
+        text-align: center;
+        padding: pxToRem(58) 0;
+        border-bottom: 1px solid #efefef;
+        &:last-child {
+          border: none;
+        }
+        a {
+          color: #c30d23;
+          font-size: pxToRem(30);
+          display: block;
+          text-align: center;
+          position: relative;
+          &:before {
+            content: "";
+            width: pxToRem(12);
+            height: pxToRem(25);
+            display: block;
+            position: absolute;
+            left: pxToRem(120);
+            top: pxToRem(10);
+            background: url("#{$img_path}/icon_arrow.png") no-repeat center top transparent;
+            @include background-size(contain);
+          }
+        }
+      }
+    }
+    @include animate-fadeInRightBig;
+    &.show {
+      @include transition(all 0.2s ease);
+      background-color: rgba(0, 0, 0, 0.34);
+      opacity: 1;
+      visibility: visible;
+      .nav-list{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+@include hdpi(2){
+   .logo{
+      background-image: url('#{$img_path}/logo_2X.png')!important;
+   }
+}
 
 
 
