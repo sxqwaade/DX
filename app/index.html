@@ -9,22 +9,22 @@
 </head>
 <body>
 
-    <div class="logo"></div>
-    <div class="nav"></div>
-    <div class="nav-content">
+    <a href="/" title="DX" class="logo"></a>
+    <div class="nav" ng-click="showNav()"></div>
+    <div class="nav-content" >
       <div class="nav-list">
-        <div class="nav-close"></div>
+        <div class="nav-close" ng-click="closeNav()"></div>
         <ul>
-          <li><a href="#/brand">关于品牌</a></li>
-          <li><a href="#/prolist">关于产品</a></li>
-          <li><a href="#/where">我们的足迹</a></li>
-          <li><a href="#/explore">探索自然之旅</a></li>
+          <li><a ng-click="start()" href="/#/brand">关于品牌</a></li>
+          <li><a ng-click="start()" href="/#/prolist">关于产品</a></li>
+          <li><a ng-click="start()" href="/#/where">我们的足迹</a></li>
+          <li><a ng-click="start()" href="/#/explore">探索自然之旅</a></li>
         </ul>
       </div>
 
 
   </div>
-  <div ng-view class="view-content"></div>
+  <div ng-view class="view-content fadeIn"></div>
   <!--<div>Angular seed app: v<span app-version></span></div>-->
 
   <script type="text/javascript" src="public/js/lib.js"></script>

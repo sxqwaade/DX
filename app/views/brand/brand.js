@@ -9,6 +9,13 @@ angular.module('myApp.brand', ['ngRoute'])
     });
 }])
 
-.controller('BrandCtrl', [function() {
-
+.controller('BrandCtrl', ['$rootScope',function($rootScope) {
+        $rootScope.closeNav();
+        $(".switch li").on('click',function(){
+            var index= $(this).index();
+            $(".switch li").removeClass('cur');
+            $(this).attr('class','cur');
+            $('.switch-content p').removeClass('flipInX');
+            $('.switch-content p').eq(index).addClass('flipInX');
+        });
 }]);

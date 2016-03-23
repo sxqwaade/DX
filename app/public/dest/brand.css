@@ -1,0 +1,81 @@
+.flipInX {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+.flipInX {
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible; }
+
+.switch {
+  padding-top: 5.22667rem;
+  color: #434343; }
+.switch ul {
+  width: 100%;
+  text-align: center;
+  display: block; }
+.switch ul li {
+  display: inline-block;
+  font-size: 0.64rem;
+  line-height: 0.64rem;
+  margin: 0 0.96rem;
+  font-weight: bold; }
+.switch ul li.cur {
+  color: #c30d23;
+  text-decoration: underline; }
+.switch .switch-content {
+  margin-top: 1.45067rem;
+  position: relative;
+  min-height: 7.68rem; }
+.switch .switch-content p {
+  position: absolute;
+  display: block;
+  top: 0;
+  font-size: 0.512rem;
+  text-align: center;
+  color: #434343;
+  line-height: 0.768rem;
+  opacity: 0;
+  width: 100%; }
+
+.bottom-img {
+  width: 16rem;
+  height: 9.87733rem;
+  position: absolute;
+  bottom: 0.96rem;
+  background: url("../../views/brand/images/brand-bottom.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  .brand .bottom-img {
+    -webkit-background-size: 80%;
+    background-size: 80%;
+    background-position: center bottom; } }
+
+/*# sourceMappingURL=brand.css.map */

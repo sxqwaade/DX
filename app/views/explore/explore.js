@@ -9,6 +9,6 @@ angular.module('myApp.explore', ['ngRoute'])
     });
 }])
 
-.controller('ExploreCtrl', [function() {
-
+.controller('ExploreCtrl', ['$rootScope',function($rootScope) {
+    $rootScope.closeNav();
 }]);

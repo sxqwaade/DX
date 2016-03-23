@@ -1,13 +1,72 @@
 @import "../../public/sassCore/base";
 @import "../../public/sassCore/function";
 $img_path:"../../views/home/images";
-@include animate-fadeIn;
+@include animate-fadeInScale;
 .index-page{
   width: 100%;
   height: 100%;
   background: url("#{$img_path}/index_bg.jpg") no-repeat center top transparent;
-  background-size: (auto 100%);
+  @include background-size(auto 100%);
+  .title-img{
+    position: absolute;
+    width: pxToRem(679);
+    height: pxToRem(352);
+    top: pxToRem(365);
+    left: pxToRem(55);
+  }
 }
+.bottom{
+  width: 100%;
+  height: pxToRem(500);
+  @include gradient-vertical(rgba(255,255,255,0) 20%, rgba(0,0,0,0.9));
+  position: absolute;
+  bottom: 0;
+  .rn-carousel-control-prev{
+    width: pxToRem(24);
+    height: pxToRem(47);
+    background: url("#{$img_path}/arrows_left.png") no-repeat center top transparent;
+    @include background-size(contain);
+    position: absolute;
+    left: pxToRem(24);
+    top:pxToRem(252);
+    display: block;
+  }
+  .rn-carousel-control-next{
+    width: pxToRem(24);
+    height: pxToRem(47);
+    background: url("#{$img_path}/arrows_right.png") no-repeat center top transparent;
+    @include background-size(contain);
+    position: absolute;
+    right: pxToRem(24);
+    top:pxToRem(252);
+    display: block;
+  }
+  >ul{
+    height: pxToRem(214);
+    margin: pxToRem(175) auto pxToRem(50);
+    li{
+      width: 100%;
+      position: absolute;
+      a{
+        width:pxToRem(508);
+        display: block;
+        margin: 0 auto;
+        img{width: 100%;}
+      }
+    }
+  }
+  p{
+    font-size: pxToRem(14);
+    line-height: pxToRem(24);
+    text-align: center;
+    color: #FFFFFF;
+    a{
+      margin: 0 pxToRem(24);
+      color: #FFFFFF;
+    }
+  }
+}
+
 @include iphone4{
   .view-content .index-page{
     background-size: (100%);

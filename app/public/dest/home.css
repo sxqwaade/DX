@@ -1,28 +1,82 @@
-.fadeIn {
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+@-webkit-keyframes fadeInScale {
+  0% {
+    -webkit-transform: scale(1.05); }
+  100% {
+    -webkit-transform: scale(1); } }
+@keyframes fadeInScale {
+  0% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+.fadeInScale {
+  -webkit-animation-name: fadeInScale;
+  animation-name: fadeInScale;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn; }
 
 .index-page {
   width: 100%;
   height: 100%;
   background: url("../../views/home/images/index_bg.jpg") no-repeat center top transparent;
+  -webkit-background-size: auto 100%;
   background-size: auto 100%; }
+.index-page .title-img {
+  position: absolute;
+  width: 14.48533rem;
+  height: 7.50933rem;
+  top: 7.78667rem;
+  left: 1.17333rem; }
+
+.bottom {
+  width: 100%;
+  height: 10.66667rem;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.9));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.9));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.9));
+  position: absolute;
+  bottom: 0; }
+.bottom .rn-carousel-control-prev {
+  width: 0.512rem;
+  height: 1.00267rem;
+  background: url("../../views/home/images/arrows_left.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain;
+  position: absolute;
+  left: 0.512rem;
+  top: 5.376rem;
+  display: block; }
+.bottom .rn-carousel-control-next {
+  width: 0.512rem;
+  height: 1.00267rem;
+  background: url("../../views/home/images/arrows_right.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain;
+  position: absolute;
+  right: 0.512rem;
+  top: 5.376rem;
+  display: block; }
+.bottom > ul {
+  height: 4.56533rem;
+  margin: 3.73333rem auto 1.06667rem; }
+.bottom > ul li {
+  width: 100%;
+  position: absolute; }
+.bottom > ul li a {
+  width: 10.83733rem;
+  display: block;
+  margin: 0 auto; }
+.bottom > ul li a img {
+  width: 100%; }
+.bottom p {
+  font-size: 0.29867rem;
+  line-height: 0.512rem;
+  text-align: center;
+  color: #FFFFFF; }
+.bottom p a {
+  margin: 0 0.512rem;
+  color: #FFFFFF; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .view-content .index-page {

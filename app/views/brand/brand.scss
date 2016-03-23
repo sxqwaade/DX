@@ -1,0 +1,54 @@
+@import "../../public/sassCore/base";
+@import "../../public/sassCore/function";
+$img_path:"../../views/brand/images";
+@include animate-flipInX;
+.switch{
+  padding-top:pxToRem(245);
+  color: #434343;
+  ul{
+    width: 100%;
+    text-align: center;
+    display: block;
+    li{
+      display: inline-block;
+      font-size: pxToRem(30);
+      line-height: pxToRem(30);
+      margin:  0 pxToRem(45);
+      font-weight: bold;
+      &.cur{
+        color:#c30d23;
+        text-decoration: underline;
+      }
+    }
+  }
+  .switch-content{
+    margin-top: pxToRem(68);
+    position: relative;
+    min-height: pxToRem(360);
+    p{
+      position: absolute;
+      display: block;
+      top: 0;
+      font-size: pxToRem(24);
+      text-align: center;
+      color: #434343;
+      line-height: pxToRem(36);
+      opacity: 0;
+      width: 100%;
+    }
+  }
+}
+.bottom-img{
+  width: pxToRem(750);
+  height:pxToRem(463);
+  position: absolute;
+  bottom: pxToRem(45);
+  background: url("#{$img_path}/brand-bottom.png") no-repeat center top transparent;
+  @include background-size(contain);
+}
+@include iphone4{
+  .brand .bottom-img{
+    @include background-size(80%);
+    background-position: center bottom;
+  }
+}

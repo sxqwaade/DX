@@ -1,10 +1,12 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-23 10:03 
+ * @Update: 2016-03-24 00:03 
  */ 
 
-body .nav-content .fadeInRightBig {
+#loading-bar,#loading-bar-spinner{pointer-events:none;-webkit-pointer-events:none;-webkit-transition:350ms linear all;-moz-transition:350ms linear all;-o-transition:350ms linear all;transition:350ms linear all}#loading-bar-spinner.ng-enter,#loading-bar-spinner.ng-leave.ng-leave-active,#loading-bar.ng-enter,#loading-bar.ng-leave.ng-leave-active{opacity:0}#loading-bar-spinner.ng-enter.ng-enter-active,#loading-bar-spinner.ng-leave,#loading-bar.ng-enter.ng-enter-active,#loading-bar.ng-leave{opacity:1}#loading-bar .bar{-webkit-transition:width 350ms;-moz-transition:width 350ms;-o-transition:width 350ms;transition:width 350ms;background:#29d;position:fixed;z-index:10002;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}#loading-bar .peg{position:absolute;width:70px;right:0;top:0;height:2px;opacity:.45;-moz-box-shadow:#29d 1px 0 6px 1px;-ms-box-shadow:#29d 1px 0 6px 1px;-webkit-box-shadow:#29d 1px 0 6px 1px;box-shadow:#29d 1px 0 6px 1px;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%}#loading-bar-spinner{display:block;position:fixed;z-index:10002;top:10px;left:10px}#loading-bar-spinner .spinner-icon{width:14px;height:14px;border:2px solid transparent;border-top-color:#29d;border-left-color:#29d;border-radius:50%;-webkit-animation:loading-bar-spinner 400ms linear infinite;-moz-animation:loading-bar-spinner 400ms linear infinite;-ms-animation:loading-bar-spinner 400ms linear infinite;-o-animation:loading-bar-spinner 400ms linear infinite;animation:loading-bar-spinner 400ms linear infinite}@-webkit-keyframes loading-bar-spinner{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes loading-bar-spinner{0%{-moz-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes loading-bar-spinner{0%{-o-transform:rotate(0);transform:rotate(0)}100%{-o-transform:rotate(360deg);transform:rotate(360deg)}}@-ms-keyframes loading-bar-spinner{0%{-ms-transform:rotate(0);transform:rotate(0)}100%{-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+input[type=range]{width:300px}ul[rn-carousel]{overflow:hidden;padding:0;white-space:nowrap;position:relative;-webkit-perspective:1000px;-ms-perspective:1000px;perspective:1000px;-ms-touch-action:pan-y;touch-action:pan-y}ul[rn-carousel]>li{color:#000;-webkit-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden;overflow:visible;vertical-align:top;position:absolute;left:0;right:0;white-space:normal;padding:0;margin:0;list-style-type:none;width:100%;height:100%;display:inline-block}ul[rn-carousel-buffered]>li{display:none}ul[rn-carousel-transition=hexagon]{overflow:visible}div.rn-carousel-indicator span{cursor:pointer;color:#666}div.rn-carousel-indicator span.active{color:#fff}.rn-carousel-control{-webkit-transition:opacity .2s ease-out;transition:opacity .2s ease-out;font-size:2rem;position:absolute;top:40%;opacity:.75;cursor:pointer}.rn-carousel-control:hover{opacity:1}.rn-carousel-control.rn-carousel-control-prev{left:.5em}.rn-carousel-control.rn-carousel-control-prev:before{content:"<"}.rn-carousel-control.rn-carousel-control-next{right:.5em}.rn-carousel-control.rn-carousel-control-next:before{content:">"}
+.fadeIn, .fadeInRightBig, .fadeInUpBig {
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
   -webkit-animation-fill-mode: both;
@@ -411,17 +413,74 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #ccc; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
 html {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 body {
   position: relative;
   height: 100%; }
 body .view-content {
-  z-index: 0;
+  z-index: 1;
   margin: 0 auto;
   height: 100%;
   position: relative; }
+body .view-content .normal-bg {
+  width: 100%;
+  height: 100%;
+  background: url("/public/images/normal_bg.jpg") no-repeat center top transparent;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%; }
 body .logo {
   width: 3.15733rem;
   height: 2.368rem;
@@ -500,23 +559,6 @@ body .nav-content .nav-list li a:before {
   background: url("/public/images/icon_arrow.png") no-repeat center top transparent;
   -webkit-background-size: contain;
   background-size: contain; }
-@-webkit-keyframes fadeInRightBig {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(2000px); }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0); } }
-@keyframes fadeInRightBig {
-  0% {
-    opacity: 0;
-    transform: translateX(2000px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-body .nav-content .fadeInRightBig {
-  -webkit-animation-name: fadeInRightBig;
-  animation-name: fadeInRightBig; }
 body .nav-content.show {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -530,34 +572,97 @@ body .nav-content.show .nav-list {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .logo {
     background-image: url("/public/images/logo_2X.png") !important; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  body .view-content .normal-bg {
+    background-size: 100%; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
+  body .view-content .normal-bg {
+    background-size: auto 100%; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (min--moz-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (-o-min-device-pixel-ratio: 1 / 1) and (max-width: 1080px), only screen and (min-resolution: 96dpi) and (max-width: 1080px), only screen and (min-resolution: 1dppx) and (max-width: 1080px) {
+  .normal-bg {
+    background-size: 100%; } }
 
 /*# sourceMappingURL=common.css.map */
 
-.fadeIn {
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+@-webkit-keyframes fadeInScale {
+  0% {
+    -webkit-transform: scale(1.05); }
+  100% {
+    -webkit-transform: scale(1); } }
+@keyframes fadeInScale {
+  0% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+.fadeInScale {
+  -webkit-animation-name: fadeInScale;
+  animation-name: fadeInScale;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn; }
 
 .index-page {
   width: 100%;
   height: 100%;
   background: url("../../views/home/images/index_bg.jpg") no-repeat center top transparent;
+  -webkit-background-size: auto 100%;
   background-size: auto 100%; }
+.index-page .title-img {
+  position: absolute;
+  width: 14.48533rem;
+  height: 7.50933rem;
+  top: 7.78667rem;
+  left: 1.17333rem; }
+
+.bottom {
+  width: 100%;
+  height: 10.66667rem;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.9));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.9));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 20%, rgba(0, 0, 0, 0.9));
+  position: absolute;
+  bottom: 0; }
+.bottom .rn-carousel-control-prev {
+  width: 0.512rem;
+  height: 1.00267rem;
+  background: url("../../views/home/images/arrows_left.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain;
+  position: absolute;
+  left: 0.512rem;
+  top: 5.376rem;
+  display: block; }
+.bottom .rn-carousel-control-next {
+  width: 0.512rem;
+  height: 1.00267rem;
+  background: url("../../views/home/images/arrows_right.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain;
+  position: absolute;
+  right: 0.512rem;
+  top: 5.376rem;
+  display: block; }
+.bottom > ul {
+  height: 4.56533rem;
+  margin: 3.73333rem auto 1.06667rem; }
+.bottom > ul li {
+  width: 100%;
+  position: absolute; }
+.bottom > ul li a {
+  width: 10.83733rem;
+  display: block;
+  margin: 0 auto; }
+.bottom > ul li a img {
+  width: 100%; }
+.bottom p {
+  font-size: 0.29867rem;
+  line-height: 0.512rem;
+  text-align: center;
+  color: #FFFFFF; }
+.bottom p a {
+  margin: 0 0.512rem;
+  color: #FFFFFF; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .view-content .index-page {
@@ -570,3 +675,85 @@ body .nav-content.show .nav-list {
     background-size: 100%; } }
 
 /*# sourceMappingURL=home.css.map */
+
+.flipInX {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg); }
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg); }
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0; }
+  40% {
+    transform: perspective(400px) rotateX(-10deg); }
+  70% {
+    transform: perspective(400px) rotateX(10deg); }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1; } }
+.flipInX {
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible; }
+
+.switch {
+  padding-top: 5.22667rem;
+  color: #434343; }
+.switch ul {
+  width: 100%;
+  text-align: center;
+  display: block; }
+.switch ul li {
+  display: inline-block;
+  font-size: 0.64rem;
+  line-height: 0.64rem;
+  margin: 0 0.96rem;
+  font-weight: bold; }
+.switch ul li.cur {
+  color: #c30d23;
+  text-decoration: underline; }
+.switch .switch-content {
+  margin-top: 1.45067rem;
+  position: relative;
+  min-height: 7.68rem; }
+.switch .switch-content p {
+  position: absolute;
+  display: block;
+  top: 0;
+  font-size: 0.512rem;
+  text-align: center;
+  color: #434343;
+  line-height: 0.768rem;
+  opacity: 0;
+  width: 100%; }
+
+.bottom-img {
+  width: 16rem;
+  height: 9.87733rem;
+  position: absolute;
+  bottom: 0.96rem;
+  background: url("../../views/brand/images/brand-bottom.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  .brand .bottom-img {
+    -webkit-background-size: 80%;
+    background-size: 80%;
+    background-position: center bottom; } }
+
+/*# sourceMappingURL=brand.css.map */

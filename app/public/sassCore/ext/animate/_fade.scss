@@ -20,6 +20,22 @@
   }  
 }
 
+// fadeInScale
+@mixin animate-fadeInScale () {
+  @include keyframes(fadeInScale){
+    0% {
+      @include transform(scale(1.05));
+    }
+    100% {
+      @include transform(scale(1));
+    }
+  }
+  .fadeInScale {
+    @include animation-name(fadeInScale);
+    @include animation-duration(4s);
+    @include animation-fill-mode(both);
+  }
+}
 
 // fadeInDown
 @mixin animate-fadeInDown () {

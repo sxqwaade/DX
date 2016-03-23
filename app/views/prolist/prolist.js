@@ -9,6 +9,6 @@ angular.module('myApp.prolist', ['ngRoute'])
   });
 }])
 
-.controller('ProlistCtrl', [function() {
-
+.controller('ProlistCtrl', ['$rootScope',function($rootScope) {
+   $rootScope.closeNav();
 }]);

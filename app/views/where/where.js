@@ -9,6 +9,6 @@ angular.module('myApp.where', ['ngRoute'])
     });
 }])
 
-.controller('WhereCtrl', [function() {
-
+.controller('WhereCtrl', ['$rootScope',function($rootScope) {
+    $rootScope.closeNav();
 }]);

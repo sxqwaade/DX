@@ -1,4 +1,4 @@
-body .nav-content .fadeInRightBig {
+.fadeIn, .fadeInRightBig, .fadeInUpBig {
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
   -webkit-animation-fill-mode: both;
@@ -405,17 +405,74 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #ccc; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig; }
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig; }
+
 html {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 body {
   position: relative;
   height: 100%; }
 body .view-content {
-  z-index: 0;
+  z-index: 1;
   margin: 0 auto;
   height: 100%;
   position: relative; }
+body .view-content .normal-bg {
+  width: 100%;
+  height: 100%;
+  background: url("/public/images/normal_bg.jpg") no-repeat center top transparent;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%; }
 body .logo {
   width: 3.15733rem;
   height: 2.368rem;
@@ -494,23 +551,6 @@ body .nav-content .nav-list li a:before {
   background: url("/public/images/icon_arrow.png") no-repeat center top transparent;
   -webkit-background-size: contain;
   background-size: contain; }
-@-webkit-keyframes fadeInRightBig {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(2000px); }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateX(0); } }
-@keyframes fadeInRightBig {
-  0% {
-    opacity: 0;
-    transform: translateX(2000px); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-body .nav-content .fadeInRightBig {
-  -webkit-animation-name: fadeInRightBig;
-  animation-name: fadeInRightBig; }
 body .nav-content.show {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -524,5 +564,14 @@ body .nav-content.show .nav-list {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .logo {
     background-image: url("/public/images/logo_2X.png") !important; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+  body .view-content .normal-bg {
+    background-size: 100%; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
+  body .view-content .normal-bg {
+    background-size: auto 100%; } }
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (min--moz-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (-o-min-device-pixel-ratio: 1 / 1) and (max-width: 1080px), only screen and (min-resolution: 96dpi) and (max-width: 1080px), only screen and (min-resolution: 1dppx) and (max-width: 1080px) {
+  .normal-bg {
+    background-size: 100%; } }
 
 /*# sourceMappingURL=common.css.map */
