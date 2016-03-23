@@ -3,13 +3,25 @@
 $img_path:"../../views/home/images";
 @include animate-fadeIn;
 .index-page{
-  width: pxToRem(750);
+  width: 100%;
   height: 100%;
   background: url("#{$img_path}/index_bg.jpg") no-repeat center top transparent;
   background-size: (auto 100%);
 }
 @include iphone4{
-  .index-page{
-    background-size: (100%)!important;
+  .view-content .index-page{
+    background-size: (100%);
+  }
+}
+@include iphone5{
+  body .view-content .index-page{
+    background-size: (auto 100%);
+  }
+}
+@include hdpi(1){
+  @include max-screen(1080px){
+    .index-page{
+      background-size: (100%);
+    }
   }
 }

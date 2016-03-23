@@ -44,6 +44,7 @@ body {
     top: 0;
     left: 0;
     z-index: 100;
+    overflow: hidden;
     .nav-close {
       width: pxToRem(25);
       height: pxToRem(26);

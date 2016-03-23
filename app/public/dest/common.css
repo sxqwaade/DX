@@ -443,7 +443,8 @@ body .nav-content {
   visibility: hidden;
   top: 0;
   left: 0;
-  z-index: 100; }
+  z-index: 100;
+  overflow: hidden; }
 body .nav-content .nav-close {
   width: 0.53333rem;
   height: 0.55467rem;
