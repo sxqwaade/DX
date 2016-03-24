@@ -30,6 +30,7 @@ $img_path:"../../views/home/images";
     left: pxToRem(24);
     top:pxToRem(252);
     display: block;
+    z-index: 99;
     &:before{
       display: none!important;
     }
@@ -43,6 +44,7 @@ $img_path:"../../views/home/images";
     right: pxToRem(24);
     top:pxToRem(252);
     display: block;
+    z-index: 99;
     &:before{
       display: none!important;
     }

@@ -1,11 +1,11 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-24 12:03 
+ * @Update: 2016-03-24 15:03 
  */ 
 
 #loading-bar,#loading-bar-spinner{pointer-events:none;-webkit-pointer-events:none;-webkit-transition:350ms linear all;-moz-transition:350ms linear all;-o-transition:350ms linear all;transition:350ms linear all}#loading-bar-spinner.ng-enter,#loading-bar-spinner.ng-leave.ng-leave-active,#loading-bar.ng-enter,#loading-bar.ng-leave.ng-leave-active{opacity:0}#loading-bar-spinner.ng-enter.ng-enter-active,#loading-bar-spinner.ng-leave,#loading-bar.ng-enter.ng-enter-active,#loading-bar.ng-leave{opacity:1}#loading-bar .bar{-webkit-transition:width 350ms;-moz-transition:width 350ms;-o-transition:width 350ms;transition:width 350ms;background:#29d;position:fixed;z-index:10002;top:0;left:0;width:100%;height:2px;border-bottom-right-radius:1px;border-top-right-radius:1px}#loading-bar .peg{position:absolute;width:70px;right:0;top:0;height:2px;opacity:.45;-moz-box-shadow:#29d 1px 0 6px 1px;-ms-box-shadow:#29d 1px 0 6px 1px;-webkit-box-shadow:#29d 1px 0 6px 1px;box-shadow:#29d 1px 0 6px 1px;-moz-border-radius:100%;-webkit-border-radius:100%;border-radius:100%}#loading-bar-spinner{display:block;position:fixed;z-index:10002;top:10px;left:10px}#loading-bar-spinner .spinner-icon{width:14px;height:14px;border:2px solid transparent;border-top-color:#29d;border-left-color:#29d;border-radius:50%;-webkit-animation:loading-bar-spinner 400ms linear infinite;-moz-animation:loading-bar-spinner 400ms linear infinite;-ms-animation:loading-bar-spinner 400ms linear infinite;-o-animation:loading-bar-spinner 400ms linear infinite;animation:loading-bar-spinner 400ms linear infinite}@-webkit-keyframes loading-bar-spinner{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes loading-bar-spinner{0%{-moz-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes loading-bar-spinner{0%{-o-transform:rotate(0);transform:rotate(0)}100%{-o-transform:rotate(360deg);transform:rotate(360deg)}}@-ms-keyframes loading-bar-spinner{0%{-ms-transform:rotate(0);transform:rotate(0)}100%{-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes loading-bar-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-.fadeIn, .fadeInRightBig, .fadeInUpBig, .fadeOutRightBig {
+.fadeIn, .fadeInRightBig, .fadeInUpBig, .fadeOut, .fadeOutRightBig {
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
   -webkit-animation-fill-mode: both;
@@ -462,6 +462,20 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   -webkit-animation-name: fadeInUpBig;
   animation-name: fadeInUpBig; }
 
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
 @-webkit-keyframes fadeOutRightBig {
   0% {
     opacity: 1;
@@ -491,13 +505,15 @@ body .view-content {
   z-index: 1;
   margin: 0 auto;
   height: 100%;
-  position: relative; }
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
 body .view-content .normal-bg {
   width: 100%;
   height: 100%;
   background: url("/public/images/normal_bg.jpg") no-repeat center top transparent;
-  -webkit-background-size: auto 100%;
-  background-size: auto 100%; }
+  -webkit-background-size: 100%;
+  background-size: 100%; }
 body .logo {
   width: 3.15733rem;
   height: 2.368rem;
@@ -591,10 +607,10 @@ body .nav-content.show .nav-list {
     background-image: url("/public/images/logo_2X.png") !important; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   body .view-content .normal-bg {
-    background-size: 100%; } }
+    background-size: 100% !important; } }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
   body .view-content .normal-bg {
-    background-size: auto 100%; } }
+    background-size: auto 100% !important; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (min--moz-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (-o-min-device-pixel-ratio: 1 / 1) and (max-width: 1080px), only screen and (min-resolution: 96dpi) and (max-width: 1080px), only screen and (min-resolution: 1dppx) and (max-width: 1080px) {
   .normal-bg {
     background-size: 100%; } }
@@ -649,7 +665,8 @@ body .nav-content.show .nav-list {
   position: absolute;
   left: 0.512rem;
   top: 5.376rem;
-  display: block; }
+  display: block;
+  z-index: 99; }
 .bottom .rn-carousel-control-prev:before {
   display: none !important; }
 .bottom .rn-carousel-control-next {
@@ -661,7 +678,8 @@ body .nav-content.show .nav-list {
   position: absolute;
   right: 0.512rem;
   top: 5.376rem;
-  display: block; }
+  display: block;
+  z-index: 99; }
 .bottom .rn-carousel-control-next:before {
   display: none !important; }
 .bottom > ul {
@@ -766,10 +784,10 @@ body .nav-content.show .nav-list {
   width: 16rem;
   height: 9.87733rem;
   position: absolute;
-  bottom: 0.96rem;
+  bottom: 0.21333rem;
   background: url("../../views/brand/images/brand-bottom.png") no-repeat center top transparent;
-  -webkit-background-size: contain;
-  background-size: contain; }
+  -webkit-background-size: auot 100%;
+  background-size: auot 100%; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .brand .bottom-img {

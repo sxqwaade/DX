@@ -1,7 +1,7 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-24 12:03 
+ * @Update: 2016-03-24 15:03 
  */ 
 
 "use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",["$rootScope",function(a){a.closeNav(),$(".switch li").on("click",function(){var a=$(this).index();$(".switch li").removeClass("cur"),$(this).attr("class","cur"),$(".switch-content p").removeClass("flipInX"),$(".switch-content p").eq(a).addClass("flipInX")})}]);

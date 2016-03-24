@@ -42,9 +42,9 @@ $img_path:"../../views/brand/images";
   width: pxToRem(750);
   height:pxToRem(463);
   position: absolute;
-  bottom: pxToRem(45);
+  bottom: pxToRem(10);
   background: url("#{$img_path}/brand-bottom.png") no-repeat center top transparent;
-  @include background-size(contain);
+  @include background-size(auot 100%);
 }
 @include iphone4{
   .brand .bottom-img{

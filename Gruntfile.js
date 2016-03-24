@@ -20,9 +20,9 @@ module.exports = function(grunt) {
             holder:{
                 files: {
                     '<%= dirs.public %>/app.css' : ['<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.css','<%= dirs.bower_components %>angular-carousel/dist/angular-carousel.min.css','<%= dirs.destpath%>/common.css','<%= dirs.destpath%>/home.css','<%= dirs.destpath%>/brand.css']
-                    ,'app/public/js/ctrl-concat.js':[
-                        '<%= dirs.views %>/**/*.min.js'
-                    ]
+                    /*,'app/public/js/ctrl-concat.js':[
+                        '<%= dirs.views %>/!**!/!*.min.js'
+                    ]*/
                     /*,'app/public/js/lib.js':[
                          '<%= dirs.bower_components %>/zepto/zepto.min.js'
                         ,'<%= dirs.public %>lib/flexible.min.js'
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                 ' * @Update: <%= grunt.template.today("yyyy-mm-dd HH:mm") %> \n' +
                 ' */ \n\n',
                 beautify: {
-                    //����ascii�����ǳ����ã���ֹ���������������
+                    //����ascii�����ǳ����ã���ֹ���������������?
                     ascii_only: true
                 }
             },
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['sass','cssmin','uglify:holder','concat:holder']);
+    grunt.registerTask('default', ['sass','cssmin','concat:holder']);
 
 
 };

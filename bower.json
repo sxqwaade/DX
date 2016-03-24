@@ -1,15 +1,19 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "DX",
+  "description": "",
+  "version": "0.1.0",
+  "homepage": "",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "~1.4.0",
     "angular-route": "~1.4.0",
+    "angular-animate":"1.4.0",
+    "angular-loading-bar":"0.9.0",
+    "angular-touch":"1.4.0",
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~5.2.0"
+    "html5-boilerplate": "~5.2.0",
+    "angular-carousel":"1.0.1"
   }
 }

@@ -46,7 +46,8 @@
   position: absolute;
   left: 0.512rem;
   top: 5.376rem;
-  display: block; }
+  display: block;
+  z-index: 99; }
 .bottom .rn-carousel-control-prev:before {
   display: none !important; }
 .bottom .rn-carousel-control-next {
@@ -58,7 +59,8 @@
   position: absolute;
   right: 0.512rem;
   top: 5.376rem;
-  display: block; }
+  display: block;
+  z-index: 99; }
 .bottom .rn-carousel-control-next:before {
   display: none !important; }
 .bottom > ul {
