@@ -19,16 +19,22 @@ module.exports = function(grunt) {
             },
             holder:{
                 files: {
-                    '<%= dirs.public %>/app.css' : ['<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.css','<%= dirs.bower_components %>angular-carousel/dist/angular-carousel.min.css','<%= dirs.destpath%>/common.css','<%= dirs.destpath%>/home.css','<%= dirs.destpath%>/brand.css']
-                    /*,'app/public/js/ctrl-concat.js':[
-                        '<%= dirs.views %>/!**!/!*.min.js'
-                    ]*/
+                    '<%= dirs.public %>/app.css' : [
+                        '<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.css'
+                        ,'<%= dirs.bower_components %>angular-carousel/dist/angular-carousel.min.css'
+                        ,'<%= dirs.destpath%>/common.css'
+                        ,'<%= dirs.destpath%>/home.css'
+                        ,'<%= dirs.destpath%>/brand.css'
+                        ,'<%= dirs.destpath%>/where.css'
+                    ]
+                    ,'app/public/js/ctrl-concat.js':[
+                        '<%= dirs.views %>/**/*.min.js'
+                    ]
                     /*,'app/public/js/lib.js':[
                          '<%= dirs.bower_components %>/zepto/zepto.min.js'
                         ,'<%= dirs.public %>lib/flexible.min.js'
                         ,'<%= dirs.bower_components %>angular/angular.min.js'
                         ,'<%= dirs.bower_components %>angular-route/angular-route.min.js'
-                        ,'<%= dirs.bower_components %>angular-animate/angular-animate.min.js'
                         ,'<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.js'
                         ,'<%= dirs.bower_components %>angular-touch/angular-touch.min.js'
                         ,'<%= dirs.bower_components %>angular-carousel/dist/angular-carousel.min.js'
@@ -45,7 +51,8 @@ module.exports = function(grunt) {
                 files: {                         // Dictionary of files
                     '<%= dirs.destpath%>common.css': 'app/public/sass/common.scss',       // 'destination': 'source'
                     '<%= dirs.destpath%>home.css': 'app/views/home/home.scss',
-                    '<%= dirs.destpath%>brand.css': 'app/views/brand/brand.scss'
+                    '<%= dirs.destpath%>brand.css': 'app/views/brand/brand.scss',
+                    '<%= dirs.destpath%>where.css': 'app/views/where/where.scss'
                 }
             }
         },
@@ -75,7 +82,7 @@ module.exports = function(grunt) {
                 ' * @Update: <%= grunt.template.today("yyyy-mm-dd HH:mm") %> \n' +
                 ' */ \n\n',
                 beautify: {
-                    //����ascii�����ǳ����ã���ֹ���������������?
+                    //����ascii�����ǳ����ã���ֹ���������������?
                     ascii_only: true
                 }
             },
@@ -113,7 +120,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['sass','cssmin','concat:holder']);
+    grunt.registerTask('default', ['sass','cssmin','uglify:holder','concat:holder']);
 
 
 };

@@ -562,19 +562,28 @@ body .nav-content .nav-list {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-body .nav-content .nav-list li {
+body .nav-content .nav-list ul > li {
   text-align: center;
   padding: 1.23733rem 0;
   border-bottom: 1px solid #efefef; }
-body .nav-content .nav-list li:last-child {
-  border: none; }
-body .nav-content .nav-list li a {
-  color: #c30d23;
-  font-size: 0.64rem;
-  display: block;
-  text-align: center;
-  position: relative; }
-body .nav-content .nav-list li a:before {
+body .nav-content .nav-list ul > li ol {
+  margin-top: 0.42667rem;
+  height: 0;
+  overflow: hidden;
+  display: block; }
+body .nav-content .nav-list ul > li ol.slideDown {
+  height: 8.21333rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+body .nav-content .nav-list ul > li ol li {
+  font-size: 0.46933rem;
+  line-height: 1.06667rem;
+  padding: 0.32rem 0; }
+body .nav-content .nav-list ul > li ol li:last-child {
+  padding-bottom: 0; }
+body .nav-content .nav-list ul > li.cur > a {
+  color: #c30d23; }
+body .nav-content .nav-list ul > li.cur > a:before {
   content: "";
   width: 0.256rem;
   height: 0.53333rem;
@@ -585,6 +594,29 @@ body .nav-content .nav-list li a:before {
   background: url("/public/images/icon_arrow.png") no-repeat center top transparent;
   -webkit-background-size: contain;
   background-size: contain; }
+body .nav-content .nav-list ul > li:last-child {
+  border: none; }
+body .nav-content .nav-list ul > li > a {
+  color: #434343;
+  font-size: 0.64rem;
+  display: block;
+  text-align: center;
+  position: relative; }
+body .nav-content .nav-list ul > li.expand > a:before {
+  content: "";
+  width: 0.256rem;
+  height: 0.53333rem;
+  display: block;
+  position: absolute;
+  left: 2.56rem;
+  top: 0.21333rem;
+  background: url("/public/images/icon_arrow.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
 body .nav-content.show {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;

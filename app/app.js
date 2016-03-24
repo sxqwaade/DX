@@ -12,6 +12,7 @@ angular.module('myApp', [
   'myApp.prolist',
   'myApp.prodetail',
   'myApp.where',
+  'myApp.where_shop',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
@@ -34,8 +35,12 @@ run(function($rootScope,cfpLoadingBar){
     $('.nav-list').addClass('fadeOutRightBig');
     $('.nav-content').addClass('fadeOut');
     setTimeout(function(){$('.nav-content').removeClass('show')},300);
-  }
+  };
   $(".nav-content").on('click',function(e){
     $(e.target).hasClass('nav-content') &&  $rootScope.closeNav();
-  })
+  });
+  $("#brand_toggle").click(function(){
+      $(".sub-nav").toggleClass('slideDown');
+      $(".brand-expand").toggleClass('expand');
+  });
 });

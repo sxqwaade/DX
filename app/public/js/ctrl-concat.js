@@ -1,12 +1,12 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-24 15:03 
+ * @Update: 2016-03-25 00:03 
  */ 
 
-"use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",["$rootScope",function(a){a.closeNav(),$(".switch li").on("click",function(){var a=$(this).index();$(".switch li").removeClass("cur"),$(this).attr("class","cur"),$(".switch-content p").removeClass("flipInX"),$(".switch-content p").eq(a).addClass("flipInX")})}]);
-"use strict";angular.module("myApp.explore",["ngRoute"]).config(["$routeProvider",function(a){a.when("/explore",{templateUrl:"views/explore/explore.html",controller:"ExploreCtrl"})}]).controller("ExploreCtrl",["$rootScope",function(a){a.closeNav()}]);
-"use strict";angular.module("myApp.home",["ngRoute"]).config(["$routeProvider",function(a){a.when("/home",{templateUrl:"views/home/home.html",controller:"HomeCtrl"})}]).controller("HomeCtrl",[function(){}]);
+"use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",["$rootScope","$scope",function(a,b){a.closeNav(),b.slides=["品牌来源","品牌承诺","品牌信念"],$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(0).addClass("cur")}]);
+"use strict";angular.module("myApp.explore",["ngRoute"]).config(["$routeProvider",function(a){a.when("/explore",{templateUrl:"views/explore/explore.html",controller:"ExploreCtrl"})}]).controller("ExploreCtrl",["$rootScope",function(a){a.closeNav(),$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(3).addClass("cur")}]);
+"use strict";angular.module("myApp.home",["ngRoute"]).config(["$routeProvider",function(a){a.when("/home",{templateUrl:"views/home/home.html",controller:"HomeCtrl"})}]).controller("HomeCtrl",[function(){$(".nav-list ul>li").removeClass("cur")}]);
 "use strict";angular.module("myApp.prodetail",["ngRoute"]).config(["$routeProvider",function(a){a.when("/prodetail",{templateUrl:"views/prodetail/prodetail.html",controller:"ProdetailCtrl"})}]).controller("ProdetailCtrl",[function(){}]);
-"use strict";angular.module("myApp.prolist",["ngRoute"]).config(["$routeProvider",function(a){a.when("/prolist",{templateUrl:"views/prolist/prolist.html",controller:"ProlistCtrl"})}]).controller("ProlistCtrl",["$rootScope",function(a){a.closeNav()}]);
-"use strict";angular.module("myApp.where",["ngRoute"]).config(["$routeProvider",function(a){a.when("/where",{templateUrl:"views/where/where.html",controller:"WhereCtrl"})}]).controller("WhereCtrl",["$rootScope",function(a){a.closeNav()}]);
+"use strict";angular.module("myApp.prolist",["ngRoute"]).config(["$routeProvider",function(a){a.when("/prolist",{templateUrl:"views/prolist/prolist.html",controller:"ProlistCtrl"})}]).controller("ProlistCtrl",["$rootScope",function(a){a.closeNav(),$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(1).addClass("cur")}]);
+"use strict";angular.module("myApp.where",["ngRoute"]).config(["$routeProvider",function(a){a.when("/where",{templateUrl:"views/where/where.html",controller:"WhereCtrl"})}]).controller("WhereCtrl",["$rootScope",function(a){a.closeNav(),$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(2).addClass("cur")}]),angular.module("myApp.where_shop",["ngRoute"]).config(["$routeProvider",function(a){a.when("/where_shop",{templateUrl:"views/where/shop.html",controller:"WhereShopCtrl"})}]).controller("WhereShopCtrl",["$rootScope","$scope",function(a,b){a.closeNav(),b.shopSlide=[0,1],$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(2).addClass("cur")}]);

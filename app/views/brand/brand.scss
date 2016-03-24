@@ -25,7 +25,8 @@ $img_path:"../../views/brand/images";
     margin-top: pxToRem(58);
     position: relative;
     min-height: pxToRem(360);
-    p{
+    display: block;
+    li{
       position: absolute;
       display: block;
       top: 0;
@@ -33,8 +34,9 @@ $img_path:"../../views/brand/images";
       text-align: center;
       color: #434343;
       line-height: pxToRem(36);
-      opacity: 0;
       width: 100%;
+      font-weight: normal;
+      margin: 0;
     }
   }
 }

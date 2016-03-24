@@ -1,12 +1,12 @@
 <div class="brand normal-bg">
     <div class="switch">
-        <ul>
-            <li class="cur">品牌来源</li>
-            <li>品牌承诺</li>
-            <li>品牌信念</li>
+        <ul  class="custom-indicator" slides="[品牌来源,品牌承诺,品牌信念]" >
+            <li  ng-repeat="slide in slides"  ng-class="{cur: $index==$parent.carouselIndex}" ng-click="$parent.carouselIndex = $index">
+                {{slide}}
+            </li>
         </ul>
-        <div class="switch-content">
-            <p class="flipInX">
+        <ul rn-carousel  rn-carousel-index="carouselIndex" rn-carousel-buffered class="switch-content">
+            <li>
                 她，源于对神秘丰饶自然的探索<br />
                 她，源于对科学的不断创新<br />
                 她，就是D&X，一个以健康为名、以美丽为宗、<br />
@@ -16,21 +16,21 @@
                 DISCOVERY & X 寓意探索与无限可能，探索自然、<br />
                 探索生活、探索未来…<br />
                 …是一种充满希望与积极的生活态度。<br />
-            </p>
-            <p>
+            </li>
+            <li>
                 她，源于对神秘丰饶自然的探索<br />
                 她，源于对科学的不断创新<br />
                 她，就是D&X，一个以健康为名、以美丽为宗、<br />
-            </p>
-            <p>
+            </li>
+            <li>
                 她，源于对神秘丰饶自然的探索<br />
                 她，源于对科学的不断创新<br />
                 她，就是D&X，一个以健康为名、以美丽为宗、<br />
                 以爱和探索为灵魂的品牌。<br />
                 D是Discovery的缩写，X则象征未知、无限、<br />
                 目标和希望，具有广阔多元的意义。<br />
-            </p>
-        </div>
+            </li>
+        </ul>
     </div>
     <div class="bottom-img fadeInUpBig"></div>
 </div>

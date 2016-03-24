@@ -11,4 +11,6 @@ angular.module('myApp.explore', ['ngRoute'])
 
 .controller('ExploreCtrl', ['$rootScope',function($rootScope) {
     $rootScope.closeNav();
+    $(".nav-list ul>li").removeClass("cur");
+    $(".nav-list ul>li").eq(3).addClass("cur");
 }]);

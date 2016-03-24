@@ -82,20 +82,56 @@ body {
       opacity: 0;
       visibility: hidden;
       @include box-sizing(border-box);
-      li {
-        text-align: center;
-        padding: pxToRem(58) 0;
-        border-bottom: 1px solid #efefef;
-        &:last-child {
-          border: none;
-        }
-        a {
-          color: #c30d23;
-          font-size: pxToRem(30);
-          display: block;
+      ul{
+        > li {
           text-align: center;
-          position: relative;
-          &:before {
+          padding: pxToRem(58) 0;
+          border-bottom: 1px solid #efefef;
+          ol{
+            margin-top: pxToRem(20);
+            height: 0;
+            overflow: hidden;
+            display: block;
+            &.slideDown{
+              height: pxToRem(385);
+              @include transition(all 0.3s ease);
+            }
+            li{
+              font-size: pxToRem(22);
+              line-height: pxToRem(50);
+              padding: pxToRem(15) 0;
+              &:last-child{
+                padding-bottom: 0;
+              }
+            }
+          }
+          &.cur{
+            > a{
+              color: #c30d23;
+              &:before {
+                content: "";
+                width: pxToRem(12);
+                height: pxToRem(25);
+                display: block;
+                position: absolute;
+                left: pxToRem(120);
+                top: pxToRem(10);
+                background: url("#{$img_path}/icon_arrow.png") no-repeat center top transparent;
+                @include background-size(contain);
+              }
+            }
+          }
+          &:last-child {
+            border: none;
+          }
+          > a {
+            color: #434343;
+            font-size: pxToRem(30);
+            display: block;
+            text-align: center;
+            position: relative;
+          }
+          &.expand > a:before{
             content: "";
             width: pxToRem(12);
             height: pxToRem(25);
@@ -105,9 +141,12 @@ body {
             top: pxToRem(10);
             background: url("#{$img_path}/icon_arrow.png") no-repeat center top transparent;
             @include background-size(contain);
+            @include transition(all 0.3s);
+            @include transform(rotate(90deg));
           }
         }
       }
+
     }
     &.show {
       @include transition(all 0.2s ease);

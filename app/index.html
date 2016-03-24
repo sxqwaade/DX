@@ -3,19 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- uc强制竖屏 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- UC应用模式 -->
+  <meta name="browsermode" content="application">
+  <!-- QQ应用模式 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 适应移动端end -->
   <title>D&X</title>
   <meta name="description" content="">
   <link rel="stylesheet" href="public/app.css">
 </head>
 <body>
 
-    <a href="/" title="DX" class="logo"></a>
+    <a href="/#/" title="DX" class="logo"></a>
     <div class="nav" ng-click="showNav()"></div>
     <div class="nav-content" >
       <div class="nav-list">
         <div class="nav-close" ng-click="closeNav()"></div>
         <ul>
-          <li><a ng-click="start()" href="/#/brand">关于品牌</a></li>
+          <li class="brand-expand">
+            <a ng-click="start()" id="brand_toggle" href="javascript:void(0);">关于品牌</a>
+            <ol class="sub-nav">
+              <li><a href="/#/brand">关于D&X</a></li>
+              <li><a href="###">研发创新</a></li>
+              <li><a href="###">品牌理念</a></li>
+              <li><a href="###">企业动态</a></li>
+              <li><a href="###">WHY D&X</a></li>
+            </ol>
+          </li>
           <li><a ng-click="start()" href="/#/prolist">关于产品</a></li>
           <li><a ng-click="start()" href="/#/where">我们的足迹</a></li>
           <li><a ng-click="start()" href="/#/explore">探索自然之旅</a></li>

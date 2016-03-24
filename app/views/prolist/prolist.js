@@ -11,4 +11,6 @@ angular.module('myApp.prolist', ['ngRoute'])
 
 .controller('ProlistCtrl', ['$rootScope',function($rootScope) {
    $rootScope.closeNav();
+   $(".nav-list ul>li").removeClass("cur");
+   $(".nav-list ul>li").eq(1).addClass("cur");
 }]);

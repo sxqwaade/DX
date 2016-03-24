@@ -9,13 +9,10 @@ angular.module('myApp.brand', ['ngRoute'])
     });
 }])
 
-.controller('BrandCtrl', ['$rootScope',function($rootScope) {
+.controller('BrandCtrl', ['$rootScope','$scope', function($rootScope,$scope) {
         $rootScope.closeNav();
-        $(".switch li").on('click',function(){
-            var index= $(this).index();
-            $(".switch li").removeClass('cur');
-            $(this).attr('class','cur');
-            $('.switch-content p').removeClass('flipInX');
-            $('.switch-content p').eq(index).addClass('flipInX');
-        });
+
+        $scope.slides = ['品牌来源','品牌承诺','品牌信念'];
+        $(".nav-list ul>li").removeClass("cur");
+        $(".nav-list ul>li").eq(0).addClass("cur");
 }]);

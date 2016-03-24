@@ -1,0 +1,101 @@
+@import "../../public/sassCore/base";
+$img_path:"../../views/where/images";
+.where{
+  color: #434343;
+  position: relative;
+  h3{
+    font-size:pxToRem(36);
+    padding-top: pxToRem(230);
+    text-align: center;
+    font-weight: bold;
+  }
+  p{
+    font-size: pxToRem(30);
+    line-height: pxToRem(48);
+    text-align: center;
+  }
+  .map{
+    width: pxToRem(750);
+    height: pxToRem(645);
+    position: absolute;
+    top: pxToRem(420);
+    left: 50%;
+    @include transform(translateX(-50%));
+    background: url("#{$img_path}/map.png") no-repeat center center transparent;
+    @include background-size(contain);
+    .sydney{
+      width: pxToRem(213);
+      height: pxToRem(97);
+      position: absolute;
+      right: pxToRem(15);
+      top:pxToRem(370);
+      background: url("#{$img_path}/sydney.png") no-repeat center top transparent;
+      @include background-size(contain);
+    }
+    .melbourne{
+      width: pxToRem(233);
+      height: pxToRem(75);
+      position: absolute;
+      right: pxToRem(196);
+      top:pxToRem(505);
+      background: url("#{$img_path}/melbourne.png") no-repeat center top transparent;
+      @include background-size(contain);
+    }
+  }
+}
+
+.where_shop{
+  color: #434343;
+  padding-top: pxToRem(237);
+  @include box-sizing(border-box);
+  .carouselShop{
+    width: pxToRem(750);
+    max-height: pxToRem(750);
+    height: 100%;
+    display: block;
+    h3{
+      font-size:pxToRem(36);
+      text-align: center;
+      font-weight: bold;
+    }
+    p{
+      font-size: pxToRem(24);
+      line-height: pxToRem(36);
+      text-align: center;
+    }
+    .img{
+      width: pxToRem(686);
+      max-height: pxToRem(407);
+      margin:pxToRem(70) auto 0;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  div.rn-carousel-indicator span{
+    color: #dfdfdf;
+    display: inline-block;
+    font-size: pxToRem(40);
+  }
+  div.rn-carousel-indicator span.active{
+    color: #c30d23;
+  }
+  .custom-indicato{
+    width: 100%;
+    height: pxToRem(20);
+    text-align: center;
+    position: absolute;
+    bottom: pxToRem(110);
+    text-align: center;
+  }
+  .bottom_img{
+    width: pxToRem(382);
+    height: pxToRem(24);
+    position: absolute;
+    bottom: pxToEm(35);
+    left: 50%;
+    @include transform(translateX(-50%));
+    background: url("#{$img_path}/where_bottom.png") no-repeat center top transparent;
+    @include background-size(contain);
+  }
+}
