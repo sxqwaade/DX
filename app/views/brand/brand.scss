@@ -22,7 +22,7 @@ $img_path:"../../views/brand/images";
     }
   }
   .switch-content{
-    margin-top: pxToRem(68);
+    margin-top: pxToRem(58);
     position: relative;
     min-height: pxToRem(360);
     p{
@@ -44,7 +44,7 @@ $img_path:"../../views/brand/images";
   position: absolute;
   bottom: pxToRem(10);
   background: url("#{$img_path}/brand-bottom.png") no-repeat center top transparent;
-  @include background-size(auot 100%);
+  @include background-size(contain);
 }
 @include iphone4{
   .brand .bottom-img{

@@ -38,31 +38,43 @@
   position: absolute;
   bottom: 0; }
 .bottom .rn-carousel-control-prev {
-  width: 0.512rem;
-  height: 1.00267rem;
-  background: url("../../views/home/images/arrows_left.png") no-repeat center top transparent;
-  -webkit-background-size: contain;
-  background-size: contain;
+  width: 1.6rem;
+  height: 2.28267rem;
   position: absolute;
-  left: 0.512rem;
-  top: 5.376rem;
+  left: 0;
+  top: 4.736rem;
   display: block;
   z-index: 99; }
 .bottom .rn-carousel-control-prev:before {
-  display: none !important; }
-.bottom .rn-carousel-control-next {
+  content: "";
+  display: block;
   width: 0.512rem;
   height: 1.00267rem;
-  background: url("../../views/home/images/arrows_right.png") no-repeat center top transparent;
-  -webkit-background-size: contain;
-  background-size: contain;
   position: absolute;
-  right: 0.512rem;
-  top: 5.376rem;
+  left: 0.512rem;
+  top: 0.64rem;
+  background: url("../../views/home/images/arrows_left.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain; }
+.bottom .rn-carousel-control-next {
+  width: 1.6rem;
+  height: 2.28267rem;
+  position: absolute;
+  right: 0;
+  top: 4.736rem;
   display: block;
   z-index: 99; }
 .bottom .rn-carousel-control-next:before {
-  display: none !important; }
+  content: "";
+  display: block;
+  width: 0.512rem;
+  height: 1.00267rem;
+  position: absolute;
+  right: 0.512rem;
+  top: 0.64rem;
+  background: url("../../views/home/images/arrows_right.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain; }
 .bottom > ul {
   height: 4.56533rem;
   margin: 3.73333rem auto 1.06667rem; }

@@ -22,31 +22,43 @@ $img_path:"../../views/home/images";
   position: absolute;
   bottom: 0;
   .rn-carousel-control-prev{
-    width: pxToRem(24);
-    height: pxToRem(47);
-    background: url("#{$img_path}/arrows_left.png") no-repeat center top transparent;
-    @include background-size(contain);
+    width: pxToRem(75);
+    height: pxToRem(107);
     position: absolute;
-    left: pxToRem(24);
-    top:pxToRem(252);
+    left: 0;
+    top:pxToRem(222);
     display: block;
     z-index: 99;
     &:before{
-      display: none!important;
+      content: "";
+      display: block;
+      width: pxToRem(24);
+      height: pxToRem(47);
+      position: absolute;
+      left: pxToRem(24);
+      top:pxToRem(30);
+      background: url("#{$img_path}/arrows_left.png") no-repeat center top transparent;
+      @include background-size(contain);
     }
   }
   .rn-carousel-control-next{
-    width: pxToRem(24);
-    height: pxToRem(47);
-    background: url("#{$img_path}/arrows_right.png") no-repeat center top transparent;
-    @include background-size(contain);
+    width: pxToRem(75);
+    height: pxToRem(107);
     position: absolute;
-    right: pxToRem(24);
-    top:pxToRem(252);
+    right: 0;
+    top:pxToRem(222);
     display: block;
     z-index: 99;
     &:before{
-      display: none!important;
+      content: "";
+      display: block;
+      width: pxToRem(24);
+      height: pxToRem(47);
+      position: absolute;
+      right: pxToRem(24);
+      top:pxToRem(30);
+      background: url("#{$img_path}/arrows_right.png") no-repeat center top transparent;
+      @include background-size(contain);
     }
   }
   >ul{

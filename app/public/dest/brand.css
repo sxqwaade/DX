@@ -49,7 +49,7 @@
   color: #c30d23;
   text-decoration: underline; }
 .switch .switch-content {
-  margin-top: 1.45067rem;
+  margin-top: 1.23733rem;
   position: relative;
   min-height: 7.68rem; }
 .switch .switch-content p {
@@ -69,8 +69,8 @@
   position: absolute;
   bottom: 0.21333rem;
   background: url("../../views/brand/images/brand-bottom.png") no-repeat center top transparent;
-  -webkit-background-size: auot 100%;
-  background-size: auot 100%; }
+  -webkit-background-size: contain;
+  background-size: contain; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .brand .bottom-img {
