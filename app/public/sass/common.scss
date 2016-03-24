@@ -5,6 +5,7 @@ $img_path:"/public/images";
 @include animate-fadeIn;
 @include animate-fadeInRightBig;
 @include animate-fadeInUpBig;
+@include animate-fadeOutRightBig;
 html{
   height: 100%;
   overflow: hidden;

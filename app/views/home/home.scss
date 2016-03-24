@@ -30,6 +30,9 @@ $img_path:"../../views/home/images";
     left: pxToRem(24);
     top:pxToRem(252);
     display: block;
+    &:before{
+      display: none!important;
+    }
   }
   .rn-carousel-control-next{
     width: pxToRem(24);
@@ -40,6 +43,9 @@ $img_path:"../../views/home/images";
     right: pxToRem(24);
     top:pxToRem(252);
     display: block;
+    &:before{
+      display: none!important;
+    }
   }
   >ul{
     height: pxToRem(214);
