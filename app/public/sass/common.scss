@@ -93,13 +93,16 @@ body {
             overflow: hidden;
             display: block;
             &.slideDown{
-              height: pxToRem(385);
+              height: pxToRem(230);
               @include transition(all 0.3s ease);
             }
             li{
               font-size: pxToRem(22);
               line-height: pxToRem(50);
               padding: pxToRem(15) 0;
+              a{
+                display: block;
+              }
               &:last-child{
                 padding-bottom: 0;
               }

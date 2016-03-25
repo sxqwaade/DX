@@ -9,10 +9,11 @@ angular.module('myApp.brand', ['ngRoute'])
     });
 }])
 
-.controller('BrandCtrl', ['$rootScope','$scope', function($rootScope,$scope) {
+.controller('BrandCtrl', ['$rootScope','$scope','$location', function($rootScope,$scope,$location) {
         $rootScope.closeNav();
 
-        $scope.slides = ['品牌来源','品牌承诺','品牌信念'];
+        $scope.slides = ['品牌来源','品牌承诺','品牌信念'];
+        $scope.carouselIndex = $location.search().index;
         $(".nav-list ul>li").removeClass("cur");
         $(".nav-list ul>li").eq(0).addClass("cur");
 }]);

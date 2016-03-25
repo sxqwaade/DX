@@ -1,10 +1,10 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-25 00:03 
+ * @Update: 2016-03-25 17:03 
  */ 
 
-"use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",["$rootScope","$scope",function(a,b){a.closeNav(),b.slides=["品牌来源","品牌承诺","品牌信念"],$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(0).addClass("cur")}]);
+"use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",["$rootScope","$scope","$location",function(a,b,c){a.closeNav(),b.slides=["品牌来源","品牌承诺","品牌信念"],b.carouselIndex=c.search().index,$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(0).addClass("cur")}]);
 "use strict";angular.module("myApp.explore",["ngRoute"]).config(["$routeProvider",function(a){a.when("/explore",{templateUrl:"views/explore/explore.html",controller:"ExploreCtrl"})}]).controller("ExploreCtrl",["$rootScope",function(a){a.closeNav(),$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(3).addClass("cur")}]);
 "use strict";angular.module("myApp.home",["ngRoute"]).config(["$routeProvider",function(a){a.when("/home",{templateUrl:"views/home/home.html",controller:"HomeCtrl"})}]).controller("HomeCtrl",[function(){$(".nav-list ul>li").removeClass("cur")}]);
 "use strict";angular.module("myApp.prodetail",["ngRoute"]).config(["$routeProvider",function(a){a.when("/prodetail",{templateUrl:"views/prodetail/prodetail.html",controller:"ProdetailCtrl"})}]).controller("ProdetailCtrl",[function(){}]);

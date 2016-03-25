@@ -82,7 +82,7 @@ module.exports = function(grunt) {
                 ' * @Update: <%= grunt.template.today("yyyy-mm-dd HH:mm") %> \n' +
                 ' */ \n\n',
                 beautify: {
-                    //����ascii�����ǳ����ã���ֹ���������������?
+                    //����ascii�����ǳ����ã���ֹ���������������?
                     ascii_only: true
                 }
             },
@@ -112,6 +112,15 @@ module.exports = function(grunt) {
                     spawn: false
                 }
             }
+        },
+        go:{
+            options:{
+                json:"app/data/data.json",
+                excel:"public/data/prodata.xls",
+                to:'excel',
+                formating:true
+            },
+            dist:{}
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -119,7 +128,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-
+    grunt.loadNpmTasks('json.excel');
     grunt.registerTask('default', ['sass','cssmin','uglify:holder','concat:holder']);
 
 

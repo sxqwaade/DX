@@ -16,6 +16,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "http-server": "^0.6.1",
     "jasmine-core": "^2.3.4",
+    "json.excel": "0.0.3",
     "karma": "~0.12",
     "karma-chrome-launcher": "^0.1.12",
     "karma-firefox-launcher": "^0.1.6",
@@ -27,7 +28,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server app/  -a 192.168.99.102 -p 8000 -c-1",
+    "start": "http-server app/  -a 172.16.14.187 -p 8000 -c-1",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
