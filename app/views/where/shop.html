@@ -1,5 +1,29 @@
 <div class="where_shop normal-bg">
-    <ul rn-carousel  rn-carousel-index="carouselShop" rn-carousel-buffered class="carouselShop">
+    <ul data-slides="0,1,2,3" rn-carousel  rn-carousel-index="carouselIndex" rn-carousel-buffered class="carouselShop">
+        <li>
+            <h3>Sydney旗舰店</h3>
+            <p>
+                Shop 2,389-391 Sussex Street,<br />
+                Sydney NSW 2000<br />
+                000-00000000<br />
+                AM8:00-PM15:00
+            </p>
+            <div class="img">
+                <img src="/views/where/images/sydney.jpg" />
+            </div>
+        </li>
+        <li>
+            <h3>Sydney旗舰店</h3>
+            <p>
+                Shop 2,389-391 Sussex Street,<br />
+                Sydney NSW 2000<br />
+                000-00000000<br />
+                AM8:00-PM15:00
+            </p>
+            <div class="img">
+                <img src="/views/where/images/sydney.jpg" />
+            </div>
+        </li>
         <li>
             <h3>Sydney旗舰店</h3>
             <p>
@@ -25,6 +49,6 @@
             </div>
         </li>
     </ul>
-    <div class="custom-indicato" rn-carousel-indicators ng-if="shopSlide.length > 1" slides="shopSlide" rn-carousel-index="carouselShop"></div>
-    <div class="bottom_img"></div>
+    <div class="custom-indicator"  rn-carousel-indicators ng-if="shopSlide.length > 1" slides="shopSlide" rn-carousel-index="carouselIndex"></div>
+    <div  ng-if="shopSlide.length > 1" class="slide_bottom_img"></div>
 </div>

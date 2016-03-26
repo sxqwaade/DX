@@ -75,27 +75,18 @@ $img_path:"../../views/where/images";
   div.rn-carousel-indicator span{
     color: #dfdfdf;
     display: inline-block;
-    font-size: pxToRem(40);
+    font-size: pxToRem(25);
+    margin:0 pxToRem(10);
   }
   div.rn-carousel-indicator span.active{
     color: #c30d23;
   }
-  .custom-indicato{
+  .custom-indicator{
     width: 100%;
     height: pxToRem(20);
     text-align: center;
     position: absolute;
     bottom: pxToRem(110);
     text-align: center;
-  }
-  .bottom_img{
-    width: pxToRem(382);
-    height: pxToRem(24);
-    position: absolute;
-    bottom: pxToEm(35);
-    left: 50%;
-    @include transform(translateX(-50%));
-    background: url("#{$img_path}/where_bottom.png") no-repeat center top transparent;
-    @include background-size(contain);
   }
 }

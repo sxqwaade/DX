@@ -1,4 +1,4 @@
-.fadeIn, .fadeInRightBig, .fadeInUpBig, .fadeOut, .fadeOutRightBig {
+.fadeIn, .fadeInRightBig, .fadeInUpBig, .fadeInUp, .fadeInDown, .fadeOut, .fadeOutRightBig {
   -webkit-animation-duration: 0.7s;
   animation-duration: 0.7s;
   -webkit-animation-fill-mode: both;
@@ -405,6 +405,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #ccc; }
 
+@-webkit-keyframes fadeInScale {
+  0% {
+    -webkit-transform: scale(1.05); }
+  100% {
+    -webkit-transform: scale(1); } }
+@keyframes fadeInScale {
+  0% {
+    transform: scale(1.05); }
+  100% {
+    transform: scale(1); } }
+.fadeInScale {
+  -webkit-animation-name: fadeInScale;
+  animation-name: fadeInScale;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0; }
@@ -455,6 +473,42 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   -webkit-animation-name: fadeInUpBig;
   animation-name: fadeInUpBig; }
 
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0); } }
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
 @-webkit-keyframes fadeOut {
   0% {
     opacity: 1; }
@@ -492,8 +546,25 @@ html {
   overflow: hidden; }
 
 body {
+  width: 16rem;
   position: relative;
-  height: 100%; }
+  height: 100%;
+  margin: 0 auto; }
+body .nav-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3.94667rem; }
+body .nav-bg.fadeInDown {
+  height: 2.13333rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 10; }
+body .nav-bg.fadeInDown .logo {
+  top: 0rem;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6); }
+body .nav-bg.fadeInDown .nav {
+  top: 0.53333rem; }
 body .view-content {
   z-index: 1;
   margin: 0 auto;
@@ -503,8 +574,25 @@ body .view-content {
   overflow: hidden; }
 body .view-content .normal-bg {
   width: 100%;
-  height: 100%;
-  background: url("/public/images/normal_bg.jpg") no-repeat center top transparent;
+  height: 100%; }
+body .view-content .normal-bg:before {
+  width: 100%;
+  height: 10.944rem;
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: url("/public/images/normal_bgtop.jpg") no-repeat center top transparent;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto; }
+body .view-content .normal-bg:after {
+  width: 100%;
+  height: 9.088rem;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  background: url("/public/images/normal_bgbottom.jpg") no-repeat center top transparent;
   -webkit-background-size: 100% auto;
   background-size: 100% auto; }
 body .logo {
@@ -519,7 +607,7 @@ body .logo {
   z-index: 99; }
 body .nav {
   width: 1.36533rem;
-  height: 1.152rem;
+  height: 1.28rem;
   position: absolute;
   z-index: 99;
   top: 1.49333rem;
@@ -629,6 +717,18 @@ body .nav-content.show .nav-list {
   opacity: 1;
   visibility: visible; }
 
+.slide_bottom_img {
+  width: 8.14933rem;
+  height: 0.512rem;
+  position: absolute;
+  bottom: 2.1875em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: url("/public/images/slide_bottom.png") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain; }
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .logo {
     background-image: url("/public/images/logo_2X.png") !important; } }
@@ -638,11 +738,65 @@ body .nav-content.show .nav-list {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
   body .view-content .normal-bg {
     background-size: auto 100% !important; } }
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (min--moz-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (-o-min-device-pixel-ratio: 1 / 1) and (max-width: 1080px), only screen and (min-resolution: 96dpi) and (max-width: 1080px), only screen and (min-resolution: 1dppx) and (max-width: 1080px) {
-  .normal-bg {
-    background-size: 100%; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 3) and (max-width: 1242px), only screen and (min--moz-device-pixel-ratio: 3) and (max-width: 1242px), only screen and (-o-min-device-pixel-ratio: 3 / 1) and (max-width: 1242px), only screen and (min-resolution: 288dpi) and (max-width: 1242px), only screen and (min-resolution: 3dppx) and (max-width: 1242px) {
   .normal-bg {
     background-size: 110% auto !important; } }
+.mob-con {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #32373b;
+  z-index: 9990; }
+
+.mob-cen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; }
+
+.mob-cen i {
+  margin: auto;
+  display: block;
+  width: 2.73067rem;
+  height: 4.13867rem;
+  /*background: url(../images/hengping.png 0 0 no-repeat);*/
+  background: url("/public/images/hengping.png");
+  background-size: 2.73067rem 4.13867rem;
+  animation: mobileR 1.5s ease infinite alternate;
+  -webkit-animation: mobileR 1.5s ease infinite alternate; }
+
+.mob-cen div {
+  font-size: 0.46933rem;
+  margin-top: 0.42667rem;
+  color: #ffd40a; }
+
+@keyframes mobileR {
+  0% {
+    -webkit-transform: rotate(-90deg); }
+  30% {
+    -webkit-transform: rotate(-90deg); }
+  70% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(0deg); } }
+@-webkit-keyframes mobileR {
+  0% {
+    -webkit-transform: rotate(-90deg); }
+  30% {
+    -webkit-transform: rotate(-90deg); }
+  70% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(0deg); } }
+@media screen and (orientation: landscape) {
+  .mob-con {
+    display: block; }
+
+  body {
+    width: 100%; } }
 
 /*# sourceMappingURL=common.css.map */

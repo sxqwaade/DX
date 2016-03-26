@@ -1,0 +1,123 @@
+@import "../../public/sassCore/base";
+@import "../../public/sassCore/function";
+$img_path:"../../views/prolist/images";
+
+.prolist{
+  color: #434343;
+  .scroll-wrap{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    .title{
+      padding-top: pxToRem(215);
+      width: pxToRem(482);
+      height: pxToRem(36);
+      margin: 0 auto;
+      img{
+        width: 100%;
+      }
+    }
+    .description{
+      font-size: pxToRem(28);
+      text-align: center;
+      margin-top: pxToRem(20);
+      color: #5b5b5b;
+    }
+    .search-area{
+      margin: pxToRem(40) auto 0;
+      border: 2px solid #e3e3e3;
+      border-left: none;
+      border-right: none;
+      width: pxToRem(685);
+      overflow: hidden;
+      &.open{
+        .search-close:after{
+          content:"-";
+        }
+        .search-open{
+          visibility: visible;
+          opacity: 1;
+          height: auto;
+          padding-bottom: 1.45067rem;
+          @include transition(all 0.3s ease);
+        }
+      }
+      .search-close{
+        width: 100%;
+        height: pxToRem(115);
+        line-height: pxToRem(115);
+        text-align: center;
+        font-size: pxToRem(26);
+        color: #434343;
+        position: relative;
+        &:after{
+          content:"+";
+          font-size: pxToRem(30);
+          display: block;
+          position: absolute;
+          top: 0;
+          right: pxToRem(15);
+        }
+      }
+      .search-open{
+        padding-bottom: 0;
+        font-size: pxToRem(20);
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        ul{
+          @include clearfix();
+          margin-top: pxToRem(-15);
+        }
+        li{
+          float: left;
+          width: 33.33%;
+          text-align: center;
+          margin: pxToRem(15) 0;
+          &.cur{
+            color: #c4222f;
+          }
+        }
+        .show-all{
+          width: pxToRem(185);
+          height: pxToRem(40);
+          line-height: pxToRem(40);
+          text-align: center;
+          color: #FFFFFF;
+          background-color:#c4222f;
+          @include border-radius(pxToRem(10));
+          margin:pxToRem(20) auto 0;
+          display: block;
+          @include box-sizing(border-box);
+          &.cur{
+            color: #c4222f;
+            background-color: #FFFFFF;
+            border: 1px solid #c4222f;
+          }
+        }
+      }
+    }
+    .list{
+      margin: pxToRem(15) auto;
+      width: pxToRem(685);
+      ul{@include clearfix()}
+      li{
+        float: left;
+        width: 50%;
+        text-align: center;
+        margin: pxToRem(20) 0;
+        img{
+          width: pxToRem(200);
+          display: block;
+          margin: 0 auto;
+        }
+        p{
+          text-align: center;
+          font-size: pxToRem(26);
+          margin-top: pxToRem(10);
+        }
+      }
+    }
+  }
+}

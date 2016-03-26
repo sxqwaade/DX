@@ -22,10 +22,14 @@ module.exports = function(grunt) {
                     '<%= dirs.public %>/app.css' : [
                         '<%= dirs.bower_components %>angular-loading-bar/build/loading-bar.min.css'
                         ,'<%= dirs.bower_components %>angular-carousel/dist/angular-carousel.min.css'
+                        /*,'<%= dirs.destpath%>/!*.min.css'*/
                         ,'<%= dirs.destpath%>/common.css'
                         ,'<%= dirs.destpath%>/home.css'
                         ,'<%= dirs.destpath%>/brand.css'
                         ,'<%= dirs.destpath%>/where.css'
+                        ,'<%= dirs.destpath%>/explore.css'
+                        ,'<%= dirs.destpath%>/prolist.css'
+                        ,'<%= dirs.destpath%>/prodetail.css'
                     ]
                     ,'app/public/js/ctrl-concat.js':[
                         '<%= dirs.views %>/**/*.min.js'
@@ -52,7 +56,10 @@ module.exports = function(grunt) {
                     '<%= dirs.destpath%>common.css': 'app/public/sass/common.scss',       // 'destination': 'source'
                     '<%= dirs.destpath%>home.css': 'app/views/home/home.scss',
                     '<%= dirs.destpath%>brand.css': 'app/views/brand/brand.scss',
-                    '<%= dirs.destpath%>where.css': 'app/views/where/where.scss'
+                    '<%= dirs.destpath%>where.css': 'app/views/where/where.scss',
+                    '<%= dirs.destpath%>explore.css': 'app/views/explore/explore.scss',
+                    '<%= dirs.destpath%>prolist.css': 'app/views/prolist/prolist.scss',
+                    '<%= dirs.destpath%>prodetail.css': 'app/views/prodetail/prodetail.scss'
                 }
             }
         },
@@ -82,7 +89,7 @@ module.exports = function(grunt) {
                 ' * @Update: <%= grunt.template.today("yyyy-mm-dd HH:mm") %> \n' +
                 ' */ \n\n',
                 beautify: {
-                    //����ascii�����ǳ����ã���ֹ���������������?
+                    //����ascii�����ǳ����ã���ֹ���������������?
                     ascii_only: true
                 }
             },
@@ -113,14 +120,15 @@ module.exports = function(grunt) {
                 }
             }
         },
-        go:{
-            options:{
-                json:"app/data/data.json",
-                excel:"public/data/prodata.xls",
-                to:'excel',
-                formating:true
-            },
-            dist:{}
+        excel_vocabulary: {
+            first: {
+                options: {
+                    beautify: true
+                },
+                files: [
+                    { src: 'app/public/json/prodata.xlsx', dest: 'app/public/json/prodata.json' }
+                ]
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -128,7 +136,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('json.excel');
+    grunt.loadNpmTasks('grunt-excel-vocabulary');
     grunt.registerTask('default', ['sass','cssmin','uglify:holder','concat:holder']);
 
 

@@ -19,9 +19,10 @@
   <link rel="stylesheet" href="public/app.css">
 </head>
 <body>
-
-    <a href="/#/" title="DX" class="logo"></a>
-    <div class="nav" ng-click="showNav()"></div>
+    <div class="nav-bg">
+      <a href="/#/" title="DX" class="logo"></a>
+      <div class="nav" ng-click="showNav()"></div>
+    </div>
     <div class="nav-content" >
       <div class="nav-list">
         <div class="nav-close" ng-click="closeNav()"></div>
@@ -45,6 +46,13 @@
   <div ng-view class="view-content fadeIn"></div>
   <!--<div>Angular seed app: v<span app-version></span></div>-->
 
+  <!-- 竖屏提示 -->
+  <div id="MoblileR" class="mob-con">
+    <div class="mob-cen">
+      <i></i>
+      <div>为了更好的体验，请将手机/平板竖过来</div>
+    </div>
+  </div>
   <script type="text/javascript" src="public/js/lib.js"></script>
   <script src="app.js"></script>
   <script type="text/javascript" src="public/js/ctrl-concat.js"></script>

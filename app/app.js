@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.brand',
   'myApp.explore',
+  'myApp.explore_detail',
   'myApp.prodetail',
   'myApp.prolist',
   'myApp.prodetail',
@@ -18,29 +19,34 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }]).
-run(function($rootScope,cfpLoadingBar){
-  $rootScope.start = function(){
+run(function($rootScope,cfpLoadingBar) {
+  $rootScope.start = function () {
     cfpLoadingBar.start();
   }
 
   //鎵撳紑瀵艰埅娴眰
-  $rootScope.showNav = function(){
+  $rootScope.showNav = function () {
     $('.nav-content').removeClass('fadeOut');
     $('.nav-content').addClass('show');
     $('.nav-list').removeClass("fadeOutRightBig");
     $('.nav-list').addClass("fadeInRightBig");
   };
   //鍏抽棴瀵艰埅娴眰
-  $rootScope.closeNav=function(){
+  $rootScope.closeNav = function () {
     $('.nav-list').addClass('fadeOutRightBig');
     $('.nav-content').addClass('fadeOut');
-    setTimeout(function(){$('.nav-content').removeClass('show')},300);
+    setTimeout(function () {
+      $('.nav-content').removeClass('show')
+    }, 300);
   };
-  $(".nav-content").on('click',function(e){
-    $(e.target).hasClass('nav-content') &&  $rootScope.closeNav();
+  $(".nav-content").on('click', function (e) {
+    $(e.target).hasClass('nav-content') && $rootScope.closeNav();
   });
-  $("#brand_toggle").click(function(){
-      $(".sub-nav").toggleClass('slideDown');
-      $(".brand-expand").toggleClass('expand');
+  $("#brand_toggle").click(function () {
+    $(".sub-nav").toggleClass('slideDown');
+    $(".brand-expand").toggleClass('expand');
+  });
+  $rootScope.$on('$routeChangeStart', function (evt, next, current) {
+    $(".nav-bg").removeClass("fadeInDown");
   });
 });

@@ -25,9 +25,10 @@ angular.module('myApp.where_shop', ['ngRoute'])
     });
 }])
 
-.controller('WhereShopCtrl', ['$rootScope','$scope',function($rootScope,$scope) {
+.controller('WhereShopCtrl', ['$rootScope','$scope','$location', function($rootScope,$scope,$location) {
     $rootScope.closeNav();
-    $scope.shopSlide= [0,1];
+    $scope.carouselIndex = Math.round($location.search().index);
+    $scope.shopSlide= $(".carouselShop").attr("data-slides").split(',');
     $(".nav-list ul>li").removeClass("cur");
     $(".nav-list ul>li").eq(2).addClass("cur");
 }]);

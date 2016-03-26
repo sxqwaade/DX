@@ -1,0 +1,113 @@
+@import "../../public/sassCore/base";
+@import "../../public/sassCore/function";
+$img_path:"../../public/images";
+.wrap{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: #434343;
+  overflow: hidden;
+  .page1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    @include box-sizing(border-box);
+    padding-top: pxToRem(215);
+    margin-bottom: pxToRem(20);
+    @include transition(all 0.5s ease);
+    .img{
+      width: pxToRem(600);
+      height: pxToRem(590);
+      margin: 0 auto  pxToRem(30);
+      background-position: pxToRem(-50) bottom;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      @include background-size(100%);
+      position: relative;
+      img{
+        padding-top: pxToRem(15);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        @include transform(translateX(-50%));
+        height: pxToRem(580); 
+      }
+    }
+    h3{
+      text-align: center;
+      font-size: pxToRem(36);
+      font-weight: bold;
+    }
+    p{
+      font-size: pxToRem(24);
+      text-align: center;
+    }
+  }
+  .page2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    @include transform(translateY(100%));
+    @include box-sizing(border-box);
+    padding-top: pxToRem(240);
+    @include transition(all 0.5s ease);
+    .img{
+      width: pxToRem(388);
+      height: pxToRem(388);
+      margin: 0 auto;
+      img{
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    h3{
+      font-size: pxToRem(30);
+      color: #c30d23;
+      font-weight: bold;
+      text-align: center;
+    }
+    p{
+      margin: pxToRem(20) auto;
+      color: #636363;
+      text-align: center;
+      width: pxToRem(615);
+    }
+  }
+  &[data-page='1']{
+    .page1{
+      @include transform(translateY(0));
+    }
+    .page2{
+      @include transform(translateY(100%));
+    }
+  }
+  &[data-page='2']{
+    .next-page{
+      visibility: hidden;
+    }
+    .page1{
+      @include transform(translateY(-100%));
+    }
+    .page2{
+      @include transform(translateY(0));
+    }
+  }
+  .next-page{
+    visibility: visible;
+    width: pxToRem(79);
+    height: pxToRem(41);
+    position: absolute;
+    bottom: pxToRem(35);
+    left: pxToRem(335);
+    @include animation(blink 3s linear 0s infinite normal)
+  }
+}
+@include keyframes(blink){
+  0%   {opacity: 1;@include transform(translateY(pxToRem(0)))}
+  50%  {opacity: 0.1;@include transform(translateY(pxToRem(25)))}
+  100% {opacity: 1;@include transform(translateY(pxToRem(0)))}
+}

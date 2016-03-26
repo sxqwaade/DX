@@ -1,0 +1,67 @@
+@import "../../public/sassCore/base";
+@import "../../public/sassCore/function";
+$img_path:"../../views/explore/images";
+@include animate-fadeInUpBig;
+.explore{
+  color: #434343;
+  .scroll-wrap{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    h3{
+      font-size: pxToRem(36);
+      padding-top: pxToRem(290);
+      text-align: center;
+    }
+    p{
+      text-align: center;
+      font-size: pxToRem(30);
+      line-height: pxToRem(48);
+      margin-top: pxToRem(70);
+    }
+    ul{
+      display: block;
+      margin-top: pxToRem(125);
+      padding-bottom: pxToRem(255);
+      li{
+        &:after{
+          content: "";
+          width: 96%;
+          height: 2px;
+          background-color: #dfdfdf;
+          display: block;
+          margin: 0 auto;
+        }
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.explore-detail{
+  @include box-sizing(border-box);
+  padding-top: pxToRem(188);
+  .carouselExplore{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .custom-indicator{
+    width: 100%;
+    height: pxToRem(20);
+    text-align: center;
+    position: absolute;
+    bottom: pxToRem(110);
+    text-align: center;
+  }
+  div.rn-carousel-indicator span{
+    color: #dfdfdf;
+    display: inline-block;
+    font-size: pxToRem(25);
+    margin:0 pxToRem(10);
+  }
+  div.rn-carousel-indicator span.active{
+    color: #c30d23;
+  }
+}

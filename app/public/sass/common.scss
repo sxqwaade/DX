@@ -2,9 +2,12 @@
 @import "../sassCore/function";
 @import "../sassCore/core/reset";
 $img_path:"/public/images";
+@include animate-fadeInScale;
 @include animate-fadeIn;
 @include animate-fadeInRightBig;
 @include animate-fadeInUpBig;
+@include animate-fadeInUp;
+@include animate-fadeInDown;
 @include animate-fadeOut;
 @include animate-fadeOutRightBig;
 html{
@@ -12,8 +15,28 @@ html{
   overflow: hidden;
 }
 body {
+  width: pxToRem(750);
   position: relative;
   height: 100%;
+  margin: 0 auto;
+  .nav-bg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: pxToRem(185);
+    &.fadeInDown{
+      height: pxToRem(100);
+      background-color: rgba(255,255,255,0.5);
+      z-index: 10;
+      .logo{
+        top:pxToRem(0);
+        @include transform(scale(0.6))
+      }
+      .nav{
+        top:pxToRem(25);
+      }
+    }
+  }
   .view-content {
     z-index: 1;
     margin: 0 auto;
@@ -24,8 +47,26 @@ body {
     .normal-bg{
       width: 100%;
       height: 100%;
-      background: url("#{$img_path}/normal_bg.jpg") no-repeat center top transparent;
-      @include background-size(100% auto);
+      &:before{
+        width: 100%;
+        height: pxToRem(513);
+        content:"";
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        background: url("#{$img_path}/normal_bgtop.jpg") no-repeat center top transparent;
+        @include background-size(100% auto);
+      }
+      &:after{
+        width: 100%;
+        height: pxToRem(426);
+        content:"";
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        background: url("#{$img_path}/normal_bgbottom.jpg") no-repeat center top transparent;
+        @include background-size(100% auto);
+      }
     }
   }
 
@@ -41,7 +82,7 @@ body {
   }
   .nav {
     width: pxToRem(64);
-    height: pxToRem(54);
+    height: pxToRem(60);
     position: absolute;
     z-index: 99;
     top: pxToRem(70);
@@ -163,6 +204,16 @@ body {
     }
   }
 }
+.slide_bottom_img{
+  width: pxToRem(382);
+  height: pxToRem(24);
+  position: absolute;
+  bottom: pxToEm(35);
+  left: 50%;
+  @include transform(translateX(-50%));
+  background: url("#{$img_path}/slide_bottom.png") no-repeat center top transparent;
+  @include background-size(contain);
+}
 @include hdpi(2){
    .logo{
       background-image: url('#{$img_path}/logo_2X.png')!important;
@@ -178,18 +229,82 @@ body {
     background-size: (auto 100%)!important;
   }
 }
-@include hdpi(1){
-  @include max-screen(1080px){
-    .normal-bg{
-      background-size: (100%);
-    }
-  }
-}
 @include hdpi(3){
   @include max-screen(1242px){
     .normal-bg{
       background-size: (110% auto)!important;
     }
+  }
+}
+.mob-con{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #32373b;
+  z-index: 9990;
+}
+.mob-cen{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999;
+}
+.mob-cen i{
+  margin: auto;
+  display: block;
+  width: pxToRem(128);
+  height: pxToRem(194);
+  /*background: url(../images/hengping.png 0 0 no-repeat);*/
+  background: url('#{$img_path}/hengping.png');
+  background-size: pxToRem(128) pxToRem(194);
+  animation: mobileR 1.5s ease infinite alternate;
+  -webkit-animation: mobileR 1.5s ease infinite alternate;
+}
+.mob-cen div{
+  font-size: pxToRem(22);
+  margin-top: pxToRem(20);
+  color: #ffd40a;
+}
+@keyframes mobileR{
+  0% {
+    -webkit-transform: rotate(-90deg);
+  }
+  30% {
+    -webkit-transform: rotate(-90deg);
+  }
+  70% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes mobileR{
+  0% {
+    -webkit-transform: rotate(-90deg);
+  }
+  30% {
+    -webkit-transform: rotate(-90deg);
+  }
+  70% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+
+@media screen and (orientation:landscape) {
+  .mob-con{
+    display: block;
+  }
+  body{
+    width: 100%;
   }
 }
 

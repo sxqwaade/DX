@@ -68,26 +68,16 @@
 .where_shop div.rn-carousel-indicator span {
   color: #dfdfdf;
   display: inline-block;
-  font-size: 0.85333rem; }
+  font-size: 0.53333rem;
+  margin: 0 0.21333rem; }
 .where_shop div.rn-carousel-indicator span.active {
   color: #c30d23; }
-.where_shop .custom-indicato {
+.where_shop .custom-indicator {
   width: 100%;
   height: 0.42667rem;
   text-align: center;
   position: absolute;
   bottom: 2.34667rem;
   text-align: center; }
-.where_shop .bottom_img {
-  width: 8.14933rem;
-  height: 0.512rem;
-  position: absolute;
-  bottom: 2.1875em;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  background: url("../../views/where/images/where_bottom.png") no-repeat center top transparent;
-  -webkit-background-size: contain;
-  background-size: contain; }
 
 /*# sourceMappingURL=where.css.map */

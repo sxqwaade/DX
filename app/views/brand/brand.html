@@ -1,6 +1,6 @@
 <div class="brand normal-bg">
     <div class="switch">
-        <ul  class="custom-indicator" slides="[品牌来源,品牌承诺,品牌信念]" >
+        <ul  class="custom-indicator" data-slides="品牌来源,品牌承诺,品牌信念" >
             <li  ng-repeat="slide in slides"  ng-class="{cur: $index==$parent.carouselIndex}" ng-click="$parent.carouselIndex = $index">
                 {{slide}}
             </li>
