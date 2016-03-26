@@ -17,13 +17,13 @@ $img_path:"../../public/images";
     margin-bottom: pxToRem(20);
     @include transition(all 0.5s ease);
     .img{
-      width: pxToRem(600);
+      width: pxToRem(750);
       height: pxToRem(590);
       margin: 0 auto  pxToRem(30);
       background-position: pxToRem(-50) bottom;
       background-repeat: no-repeat;
       background-color: transparent;
-      @include background-size(100%);
+      @include background-size(120%);
       position: relative;
       img{
         padding-top: pxToRem(15);
@@ -32,7 +32,7 @@ $img_path:"../../public/images";
         bottom: 0;
         left: 50%;
         @include transform(translateX(-50%));
-        height: pxToRem(580); 
+        height: pxToRem(580);
       }
     }
     h3{
@@ -74,7 +74,7 @@ $img_path:"../../public/images";
       margin: pxToRem(20) auto;
       color: #636363;
       text-align: center;
-      width: pxToRem(615);
+      width: pxToRem(615);      
     }
   }
   &[data-page='1']{

@@ -3,21 +3,21 @@
 angular.module('myApp.prodetail', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/prodetail', {
-    templateUrl: 'views/prodetail/prodetail.html',
-    controller: 'ProdetailCtrl'
-  });
+      $routeProvider.when('/prodetail', {
+        templateUrl: 'views/prodetail/prodetail.html',
+        controller: 'ProdetailCtrl'
+      });
 }])
 
-.controller('ProdetailCtrl', ["$rootScope","$scope", function($rootScope,$scope) {
+.controller('ProdetailCtrl', ["$rootScope","$scope", '$location',function($rootScope,$scope,$location) {
       $rootScope.closeNav();
       $(".nav-list ul>li").removeClass("cur");
       $(".nav-list ul>li").eq(1).addClass("cur");
 
-        var tagId = "swip";
-        var pressX = 0, pressY = 0;
-        var obj = document.getElementById(tagId);
-        $('#swip').on('touchmove', function(event) {
+      var tagId = "swip";
+      var pressX = 0, pressY = 0;
+      var obj = document.getElementById(tagId);
+      $('#swip').on('touchmove', function(event) {
             // 如果这个元素的位置内只有一个手指的话
             if (event.targetTouches.length == 1) {
                 var touch = event.targetTouches[0];
@@ -56,7 +56,7 @@ angular.module('myApp.prodetail', ['ngRoute'])
             }
         }, false);
 
-        $('#swip').on('touchstart', function(event) {
+      $('#swip').on('touchstart', function(event) {
             // 如果这个元素的位置内只有一个手指的话
             if (event.targetTouches.length == 1) {
                 var touch = event.targetTouches[0];
@@ -67,4 +67,7 @@ angular.module('myApp.prodetail', ['ngRoute'])
                 touchStart.value = pressX + ';' + pressY;
             }
         }, false);
+
+      $scope.pro = $rootScope.prodata[$location.search().category][$location.search().name]
+
 }]);

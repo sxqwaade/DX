@@ -19,7 +19,7 @@ angular.module('myApp', [
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }]).
-run(function($rootScope,cfpLoadingBar) {
+run(function($rootScope,cfpLoadingBar,$http) {
   $rootScope.start = function () {
     cfpLoadingBar.start();
   }
@@ -48,5 +48,13 @@ run(function($rootScope,cfpLoadingBar) {
   });
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
     $(".nav-bg").removeClass("fadeInDown");
+  });
+
+  $http.get('public/json/prodata.json').then(function(res){
+    $rootScope.prodata = res.data;
+    $rootScope.categories=[];
+    for(var i in res.data){
+      $rootScope.categories.push(i);
+    }
   });
 });

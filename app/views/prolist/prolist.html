@@ -10,52 +10,21 @@
             </div>
             <div class="search-open">
                 <ul>
-                    <li>男性健康滋补</li>
-                    <li>女性健康美容</li>
-                    <li>综合健康护理</li>
-                    <li>舒缓调理</li>
+                    <li ng-repeat="category in categories" ng-click="search(category)">
+                        {{category}}
+                    </li>
                 </ul>
-                <div class="show-all">显示全部产品</div>
+                <div class="show-all" ng-click="searchall()">显示全部产品</div>
             </div>
         </section>
         <div class="list">
-            <ul>
-                <li>
-                    <a href="#/prodetail">
-                        <img src="public/images/product/manyuemei.png" />
-                        <p>蔓越莓高浓度胶囊</p>
+            <ul ng-repeat="(category_name,pro_detail) in listpro">
+                <li ng-repeat="(pro_detail_key,pro_detail_value) in pro_detail">
+                    <a href="#/prodetail?category={{category_name}}&name={{pro_detail_key}}">
+                        <img src="public/images/product/{{pro_detail_value.img_name}}.png" />
+                        <p>{{pro_detail_value.pro_name}}</p>
                     </a>
                 </li>
-                <li>
-                    <a href="###">
-                        <img src="public/images/product/manyuemei.png" />
-                        <p>蔓越莓高浓度胶囊</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="###">
-                        <img src="public/images/product/manyuemei.png" />
-                        <p>蔓越莓高浓度胶囊</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="###">
-                        <img src="public/images/product/manyuemei.png" />
-                        <p>蔓越莓高浓度胶囊</p>
-                    </a>
-                </li><li>
-                <a href="###">
-                    <img src="public/images/product/manyuemei.png" />
-                    <p>蔓越莓高浓度胶囊</p>
-                </a>
-            </li>
-                <li>
-                    <a href="###">
-                        <img src="public/images/product/manyuemei.png" />
-                        <p>蔓越莓高浓度胶囊</p>
-                    </a>
-                </li>
-
             </ul>
         </div>
     </div>
