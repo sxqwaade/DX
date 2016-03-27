@@ -39,15 +39,29 @@ angular.module('myApp.prolist', ['ngRoute'])
         this.length = from < 0 ? this.length + from : from;
         return this.push.apply(this,rest);
    };
+   $scope.buildData = function() {
+
+        var returnArr = [];
+
+        angular.forEach($scope.listpro, function(productData, category) {
+            angular.forEach(productData, function(prodetail,prokey) {
+                returnArr.push( {prokey:prokey,category: category, img_name:prodetail['img_name'], pro_name:prodetail['pro_name']});
+            });
+        });
+        //apply sorting logic here
+        return returnArr;
+   };
    $scope.seachresult = [];
    $scope.listpro = {};
    $scope.section = $location.search().section;
    switch($location.search().section){
        case "baojinpin" :
            $scope.listpro = $rootScope.prodata;
+           $scope.newlistpro = $scope.buildData();
            break;
        default:
            $scope.listpro = $rootScope.prodata;
+           $scope.newlistpro = $scope.buildData();
    }
 
 
@@ -57,6 +71,7 @@ angular.module('myApp.prolist', ['ngRoute'])
            $scope.seachresult.push($rootScope.categories[i]);
        }
        $scope.listpro = $rootScope.prodata;
+       $scope.newlistpro = $scope.buildData();
    }
 
    $scope.search = function(categroy){
@@ -64,7 +79,6 @@ angular.module('myApp.prolist', ['ngRoute'])
        $scope.seachresult.indexOf(categroy) < 0 ?
            $scope.seachresult.push(categroy) : $scope.seachresult.remove($scope.seachresult.indexOf(categroy));
 
-        console.log($scope.seachresult)   
        if ($scope.seachresult.length == 0){
            $scope.searchall();
            $scope.seachresult = [];
@@ -74,5 +88,8 @@ angular.module('myApp.prolist', ['ngRoute'])
        for(var i=0;i<$scope.seachresult.length;i++){
            $scope.listpro[$scope.seachresult[i]] = $rootScope.prodata[$scope.seachresult[i]];
        }
-   }
+       $scope.newlistpro = $scope.buildData();
+   };
+
+
 }]);
