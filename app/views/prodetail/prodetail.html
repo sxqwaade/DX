@@ -1,7 +1,7 @@
 <div class="prodetail normal-bg">
     <div ng-if="proloading" class="loading"></div>
-    <div id="swip" data-page="1" class="wrap" ng-if="proloaded">
-        <div class="page1">
+    <div id="swip" data-page="1" class="wrap">
+        <div class="page1" ng-if="proloaded">
             <div class="img fadeInScale" style="background-image:url(public/images/product/{{pro.img_name}}_bg.png);">
                 <img src="public/images/product/{{pro.img_name}}.png" >
             </div>
@@ -11,7 +11,7 @@
                 {{pro.intro}}
             </p>
         </div>
-        <div class="page2">
+        <div class="page2" ng-if="proloaded">
             <div class="img">
                 <img src="public/images/product/{{pro.img_name}}_sub.png" >
             </div>
