@@ -1,0 +1,36 @@
+<div class="brand normal-bg en">
+    <div class="switch">
+        <ul  class="custom-indicator" data-slides="Brand Origin,Brand Commitment,Brand Belief" >
+            <li  ng-repeat="slide in slides"  ng-class="{cur: $index==$parent.carouselIndex}" ng-click="$parent.carouselIndex = $index">
+                {{slide}}
+            </li>
+        </ul>
+        <ul rn-carousel  rn-carousel-index="carouselIndex" rn-carousel-buffered class="switch-content">
+            <li>
+                D&X is a brand synonymous with health, wellbeing, beauty and vitality.<br />
+                At D&X we are committed to providing our customers <br />
+                with the ultimate health and beauty products.<br />
+                Our innovative high quality products<br />
+                are specifically created to fit today’s busy lifestyles. <br />
+                The nutrition range offers a comprehensive set of supplements<br />
+                for wellbeing and our beauty range is designed to fashion a natural look and feel.<br />
+                The origins of the name D&X is <br />
+                a combination of exploring and discovering health and beauty.<br />
+                D represents discovery, this is the journey of healthy living<br />
+                and X represents exploration and infinite possibilities in pursuit of good health.<br />
+            </li>
+            <li>
+                Our commitment is to provide our customers <br />
+                with the ultimate health and beauty products.<br />
+                Each product is researched, designed and created<br />by highly skilled professionals to ensure the highest quality product is brought to you.<br />
+            </li>
+            <li>
+                Our commitment is to provide our customers <br />
+                with the ultimate health and beauty products.<br />
+                Each product is researched, designed and created <br />
+                by highly skilled professionals to ensure the highest quality product is brought to you.<br />
+            </li>
+        </ul>
+    </div>
+    <div class="bottom-img fadeInUpBig"></div>
+</div>

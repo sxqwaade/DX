@@ -7,6 +7,10 @@ angular.module('myApp.explore', ['ngRoute'])
         templateUrl: 'views/explore/explore.html',
         controller: 'ExploreCtrl'
     });
+    $routeProvider.when('/explore_en', {
+        templateUrl: 'views/explore/explore_en.html',
+        controller: 'ExploreCtrl'
+    });
 }])
 
 .controller('ExploreCtrl', ['$rootScope',function($rootScope) {
@@ -14,7 +18,6 @@ angular.module('myApp.explore', ['ngRoute'])
     $(".nav-list ul>li").removeClass("cur");
     $(".nav-list ul>li").eq(3).addClass("cur");
     $(".scroll-wrap").scroll(function(){
-        console.log($(this).scrollTop())
         if($(this).scrollTop() == 0){
             $(".nav-bg").removeClass('fadeInDown')
             return false
@@ -28,6 +31,10 @@ angular.module('myApp.explore_detail', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/explore_detail', {
         templateUrl: 'views/explore/detail.html',
+        controller: 'ExploreDetailCtrl'
+    });
+    $routeProvider.when('/explore_detail_en', {
+        templateUrl: 'views/explore/detail_en.html',
         controller: 'ExploreDetailCtrl'
     });
 }])

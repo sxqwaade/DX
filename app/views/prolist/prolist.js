@@ -7,9 +7,13 @@ angular.module('myApp.prolist', ['ngRoute'])
     templateUrl: 'views/prolist/prolist.html',
     controller: 'ProlistCtrl'
   });
+  $routeProvider.when('/prolist_en', {
+    templateUrl: 'views/prolist/prolist_en.html',
+    controller: 'ProlistCtrl'
+   });
 }])
 
-.controller('ProlistCtrl', ['$rootScope','$scope', function($rootScope, $scope) {
+.controller('ProlistCtrl', ['$rootScope','$scope', '$location',function($rootScope, $scope,$location) {
    $rootScope.closeNav();
    $(".nav-list ul>li").removeClass("cur");
    $(".nav-list ul>li").eq(1).addClass("cur");
@@ -37,7 +41,15 @@ angular.module('myApp.prolist', ['ngRoute'])
    };
    $scope.seachresult = [];
    $scope.listpro = {};
-   $scope.listpro = $rootScope.prodata;
+   $scope.section = $location.search().section;
+   switch($location.search().section){
+       case "baojinpin" :
+           $scope.listpro = $rootScope.prodata;
+           break;
+       default:
+           $scope.listpro = $rootScope.prodata;
+   }
+
 
    $scope.searchall = function(){
        $scope.seachresult=[];

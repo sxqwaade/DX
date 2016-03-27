@@ -31,7 +31,8 @@
 .explore .scroll-wrap h3 {
   font-size: 0.768rem;
   padding-top: 6.18667rem;
-  text-align: center; }
+  text-align: center;
+  font-weight: bold; }
 .explore .scroll-wrap p {
   text-align: center;
   font-size: 0.64rem;

@@ -2,52 +2,65 @@
 @import "../../public/sassCore/function";
 $img_path:"../../views/brand/images";
 @include animate-flipInX;
-.switch{
-  padding-top:pxToRem(245);
-  color: #434343;
-  ul{
+.brand{
+  &.en{
+    .switch ul li{
+      font-size: pxToRem(25);
+      margin:  0 pxToRem(9);
+    }
+  }
+  .scroll-wrap{
     width: 100%;
-    text-align: center;
-    display: block;
-    li{
-      display: inline-block;
-      font-size: pxToRem(30);
-      line-height: pxToRem(30);
-      margin:  0 pxToRem(45);
-      font-weight: bold;
-      &.cur{
-        color:#c30d23;
-        text-decoration: underline;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .switch{
+    padding-top:pxToRem(245);
+    color: #434343;
+    ul{
+      width: 100%;
+      text-align: center;
+      display: block;
+      li{
+        display: inline-block;
+        font-size: pxToRem(30);
+        line-height: pxToRem(30);
+        margin:  0 pxToRem(45);
+        font-weight: bold;
+        &.cur{
+          color:#c30d23;
+          text-decoration: underline;
+        }
+      }
+    }
+    .switch-content{
+      margin-top: pxToRem(58);
+      position: relative;
+      min-height: pxToRem(360);
+      display: block;
+      li{
+        position: absolute;
+        display: block;
+        top: 0;
+        font-size: pxToRem(24);
+        text-align: center;
+        color: #434343;
+        line-height: pxToRem(36);
+        width: 100%;
+        font-weight: normal;
+        margin: 0;
       }
     }
   }
-  .switch-content{
-    margin-top: pxToRem(58);
-    position: relative;
-    min-height: pxToRem(360);
-    display: block;
-    li{
-      position: absolute;
-      display: block;
-      top: 0;
-      font-size: pxToRem(24);
-      text-align: center;
-      color: #434343;
-      line-height: pxToRem(36);
-      width: 100%;
-      font-weight: normal;
-      margin: 0;
-    }
+  .bottom-img{
+    width: pxToRem(750);
+    height:pxToRem(463);
+    margin-top: pxToRem(50);
+    background: url("#{$img_path}/brand-bottom.png") no-repeat center top transparent;
+    @include background-size(contain);
   }
 }
-.bottom-img{
-  width: pxToRem(750);
-  height:pxToRem(463);
-  position: absolute;
-  bottom: pxToRem(10);
-  background: url("#{$img_path}/brand-bottom.png") no-repeat center top transparent;
-  @include background-size(contain);
-}
+
 @include iphone4{
   .brand .bottom-img{
     @include background-size(80%);

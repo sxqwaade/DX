@@ -126,7 +126,8 @@ module.exports = function(grunt) {
                     beautify: true
                 },
                 files: [
-                    { src: 'app/public/json/prodata.xlsx', dest: 'app/public/json/prodata.json' }
+                    { src: 'app/public/json/prodata.xlsx', dest: 'app/public/json/prodata.json' },
+                    { src: 'app/public/json/prodata_en.xlsx', dest: 'app/public/json/prodata_en.json' }
                 ]
             }
         }

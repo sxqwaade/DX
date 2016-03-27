@@ -1,0 +1,19 @@
+{
+    "Male health tonic": {
+        "Kangaroo Essence": {
+            "img_name": "daishujing",
+            "pro_name": "Kangaroo Essence",
+            "specification": "30 capsules / 90 capsules",
+            "intro": "Suitable for adult males",
+            "ingredient": "Kangaroo powder, locust bean, Vitamin C",
+            "description": "This Australian specialty is a preferred supplement for men. Naturally high in male hormones, it is known as a “Male Treasure”.\r\nThe Australian kangaroo is highly regarded for its vigour and fertility. This high quality kangaroo essence is extracted from the adult male Australian kangaroo."
+        },
+        "Liver Health Complex": {
+            "img_name": "baoganning",
+            "pro_name": "Liver Health Complex",
+            "specification": "60 tablets / 180 tablets",
+            "ingredient": "Silybum Marianum, turmeric, Pueraria Mirifica",
+            "description": "The ‘Liver Health Complex’ is especially suitable for people who need to maintain their liver’s health.  \r\nThe ingredients of this compound integrate a variety of liver toning elements to protect the health of your liver. \r\nLiver Health Complex has a main active ingredient called “Silybum Marianum” which is helpful in protecting liver cells. \r\nIt effectively helps in liver detoxification and has enhancing and remediating effects."
+        }
+    }
+}

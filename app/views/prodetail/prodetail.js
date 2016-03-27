@@ -7,6 +7,10 @@ angular.module('myApp.prodetail', ['ngRoute'])
         templateUrl: 'views/prodetail/prodetail.html',
         controller: 'ProdetailCtrl'
       });
+      $routeProvider.when('/prodetail_en', {
+        templateUrl: 'views/prodetail/prodetail_en.html',
+        controller: 'ProdetailCtrl'
+      });
 }])
 
 .controller('ProdetailCtrl', ["$rootScope","$scope", '$location',function($rootScope,$scope,$location) {
@@ -68,6 +72,13 @@ angular.module('myApp.prodetail', ['ngRoute'])
             }
         }, false);
 
-      $scope.pro = $rootScope.prodata[$location.search().category][$location.search().name]
+      switch($location.search().section){
+          case "baojinpin":
+              $scope.pro = $rootScope.prodata[$location.search().category][$location.search().name];
+              break;
+          default:
+              $scope.pro = $rootScope.prodata[$location.search().category][$location.search().name];
+      }
+
 
 }]);

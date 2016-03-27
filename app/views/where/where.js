@@ -7,6 +7,10 @@ angular.module('myApp.where', ['ngRoute'])
         templateUrl: 'views/where/where.html',
         controller: 'WhereCtrl'
     });
+    $routeProvider.when('/where_en', {
+        templateUrl: 'views/where/where_en.html',
+        controller: 'WhereCtrl'
+    });
 }])
 
 .controller('WhereCtrl', ['$rootScope',function($rootScope) {
@@ -21,6 +25,10 @@ angular.module('myApp.where_shop', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/where_shop', {
         templateUrl: 'views/where/shop.html',
+        controller: 'WhereShopCtrl'
+    });
+    $routeProvider.when('/where_shop_en', {
+        templateUrl: 'views/where/shop_en.html',
         controller: 'WhereShopCtrl'
     });
 }])

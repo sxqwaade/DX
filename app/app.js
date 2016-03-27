@@ -45,6 +45,7 @@ run(function($rootScope,cfpLoadingBar,$http) {
   $("#brand_toggle").click(function () {
     $(".sub-nav").toggleClass('slideDown');
     $(".brand-expand").toggleClass('expand');
+    $(this).parent().toggleClass('cur');
   });
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
     $(".nav-bg").removeClass("fadeInDown");
