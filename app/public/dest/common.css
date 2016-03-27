@@ -717,6 +717,18 @@ body .nav-content.show .nav-list {
   opacity: 1;
   visibility: visible; }
 
+.loading {
+  width: 0.68267rem;
+  height: 0.68267rem;
+  position: absolute;
+  background: url("/public/images/loading.gif") no-repeat center top transparent;
+  -webkit-background-size: contain;
+  background-size: contain;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 .slide_bottom_img {
   width: 8.14933rem;
   height: 0.512rem;

@@ -1,5 +1,6 @@
 <div class="prodetail normal-bg">
-    <div id="swip" data-page="1" class="wrap" >
+    <div ng-if="proloading" class="loading"></div>
+    <div id="swip" data-page="1" class="wrap"  ng-if="proloaded">
         <div class="page1">
             <div class="img fadeInScale" style="background-image:url(public/images/product/{{pro.img_name}}_bg.png);">
                 <img src="public/images/product/{{pro.img_name}}.png" >

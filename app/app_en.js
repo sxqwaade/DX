@@ -50,8 +50,11 @@ angular.module('myApp', [
         $rootScope.$on('$routeChangeStart', function (evt, next, current) {
             $(".nav-bg").removeClass("fadeInDown");
         });
-
+        $rootScope.proloaded = false;
+        $rootScope.proloading = true;
         $http.get('public/json/prodata_en.json').then(function(res){
+            $rootScope.proloaded = true;
+            $rootScope.proloading = false;
             $rootScope.prodata = res.data;
             $rootScope.categories=[];
             for(var i in res.data){

@@ -204,6 +204,16 @@ body {
     }
   }
 }
+.loading{
+  width: pxToRem(32);
+  height: pxToRem(32);
+  position: absolute;
+  background: url("#{$img_path}/loading.gif") no-repeat center top transparent;
+  @include background-size(contain);
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%,-50%));
+}
 .slide_bottom_img{
   width: pxToRem(382);
   height: pxToRem(24);
