@@ -46,17 +46,19 @@ angular.module('myApp.prodetail', ['ngRoute'])
                         direct = "up";//向上
                         //do up function
                     }
-                }
-
-                // 把元素放在手指所在的位置
-                if(direct == 'up'){
-                    $("#swip").attr("data-page") == 1 && $("#swip").attr("data-page",'2')
-                    return false
-                }
-                if (direct == 'down'){
-                    $("#swip").attr("data-page") == 2 && $("#swip").attr("data-page",'1')
-                    return false
-                }
+                } 
+                  
+                if($(event.target).attr("id") != "detail_text"){
+                    // 把元素放在手指所在的位置
+                  if(direct == 'up'){
+                      $("#swip").attr("data-page") == 1 && $("#swip").attr("data-page",'2')
+                      return false
+                  } 
+                  if(direct == 'down'){ 
+                      $("#swip").attr("data-page") == 2 && $("#swip").attr("data-page",'1')
+                      return false
+                  } 
+                }                
             }
         }, false);
 
