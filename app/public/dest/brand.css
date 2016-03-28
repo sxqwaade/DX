@@ -32,6 +32,21 @@
   -webkit-backface-visibility: visible;
   backface-visibility: visible; }
 
+.brand .font-30 {
+  font-size: 0.64rem; }
+.brand .font-28 {
+  font-size: 0.59733rem; }
+.brand .font-24 {
+  font-size: 0.512rem; }
+.brand .font-22 {
+  font-size: 0.46933rem; }
+.brand .line-height40 {
+  line-height: 0.85333rem; }
+.brand .align-left {
+  text-align: left; }
+.brand .width480 {
+  width: 10.24rem;
+  margin: 0 auto; }
 .brand.en .switch ul li {
   font-size: 0.53333rem;
   margin: 0 0.192rem; }
@@ -41,29 +56,36 @@
   overflow-y: scroll; }
 .brand .switch {
   padding-top: 5.22667rem;
-  color: #434343; }
-.brand .switch ul {
+  color: #434343;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+.brand .switch .custom-indicator {
   width: 100%;
   text-align: center;
   display: block; }
-.brand .switch ul li {
+.brand .switch .custom-indicator li {
   display: inline-block;
   font-size: 0.64rem;
   line-height: 0.64rem;
   margin: 0 0.96rem;
   font-weight: bold; }
-.brand .switch ul li.cur {
+.brand .switch .custom-indicator li.cur {
   color: #c30d23;
   text-decoration: underline; }
 .brand .switch .switch-content {
   margin-top: 1.23733rem;
   position: relative;
   min-height: 7.68rem;
-  display: block; }
+  display: block;
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 .brand .switch .switch-content li {
   position: absolute;
   display: block;
-  top: 0;
   font-size: 0.512rem;
   text-align: center;
   color: #434343;
@@ -71,13 +93,9 @@
   width: 100%;
   font-weight: normal;
   margin: 0; }
-.brand .bottom-img {
-  width: 16rem;
-  height: 9.87733rem;
-  margin-top: 1.06667rem;
-  background: url("../../views/brand/images/brand-bottom.png") no-repeat center top transparent;
-  -webkit-background-size: contain;
-  background-size: contain; }
+.brand .switch .switch-content li .bottom-img {
+  margin: 1.06667rem auto 0.64rem;
+  display: block; }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .brand .bottom-img {

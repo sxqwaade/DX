@@ -73,6 +73,8 @@
   color: #636363;
   text-align: center;
   width: 13.12rem; }
+.wrap .page2 p.p2 {
+  text-align: left; }
 .wrap[data-page='1'] .page1 {
   -webkit-transform: translateY(0);
   transform: translateY(0); }

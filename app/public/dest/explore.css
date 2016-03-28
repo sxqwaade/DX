@@ -56,11 +56,59 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding-top: 4.01067rem; }
+  padding-top: 4.01067rem;
+  color: #434343; }
 .explore-detail .carouselExplore {
   width: 100%;
   height: 100%;
   display: block; }
+.explore-detail .carouselExplore li p, .explore-detail .carouselExplore li grid {
+  width: 13.01333rem;
+  margin: 0 auto;
+  text-align: left; }
+.explore-detail .carouselExplore li .p1 {
+  font-size: 0.55467rem;
+  line-height: 0.85333rem;
+  margin-top: 0.85333rem;
+  color: #434343; }
+.explore-detail .carouselExplore li .grid {
+  position: absolute;
+  top: 12.16rem;
+  left: 50%;
+  border: 2px solid #bebebe;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding: 0.17067rem;
+  color: #636363; }
+.explore-detail .carouselExplore li .grid .wrap {
+  border: 2px solid #e9e9e9;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.64rem 0.42667rem;
+  min-height: 5.01333rem; }
+.explore-detail .carouselExplore li .grid .wrap h3 {
+  font-size: 0.64rem;
+  font-weight: bold; }
+.explore-detail .carouselExplore li .grid .wrap h3:after {
+  content: "?";
+  display: inline-block;
+  width: 0.81067rem;
+  height: 0.81067rem;
+  line-height: 0.81067rem;
+  vertical-align: top;
+  background-color: #636363;
+  margin: 0.21333rem 0 0 0.384rem;
+  text-align: center;
+  color: #FFFFFF;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+.explore-detail .carouselExplore li .grid .wrap p {
+  line-height: 0.64rem;
+  font-size: 0.42667rem; }
 .explore-detail .custom-indicator {
   width: 100%;
   height: 0.42667rem;

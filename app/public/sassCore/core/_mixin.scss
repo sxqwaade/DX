@@ -337,7 +337,7 @@
   @return ($px / $base) * 1em;
 }
 
-// px转em
+// px转rem
 @function pxToRem($px, $base: 46.875) {
   @return ($px / $base) * 1rem;
 }

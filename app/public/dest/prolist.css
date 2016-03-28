@@ -102,6 +102,8 @@
 .prolist .scroll-wrap .list li p {
   text-align: center;
   font-size: 0.55467rem;
-  margin-top: 0.21333rem; }
+  margin-top: 0.21333rem;
+  height: 1.70667rem;
+  overflow: hidden; }
 
 /*# sourceMappingURL=prolist.css.map */

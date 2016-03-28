@@ -49,6 +49,9 @@ angular.module('myApp', [
         });
         $rootScope.$on('$routeChangeStart', function (evt, next, current) {
             $(".nav-bg").removeClass("fadeInDown");
+            $(".brand-expand").removeClass('expand');
+            $(".sub-nav").removeClass('slideDown');
+            $("#brand_toggle").removeClass('cur');
         });
         $rootScope.proloaded = false;
         $rootScope.proloading = true;

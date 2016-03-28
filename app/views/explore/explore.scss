@@ -43,10 +43,61 @@ $img_path:"../../views/explore/images";
 .explore-detail{
   @include box-sizing(border-box);
   padding-top: pxToRem(188);
+  color: #434343;
   .carouselExplore{
     width: 100%;
     height: 100%;
     display: block;
+    li{
+      p,grid{
+        width: pxToRem(610);
+        margin:0 auto;
+        text-align: left;
+      }
+      .p1{
+        font-size: pxToRem(26);
+        line-height: pxToRem(40);
+        margin-top: pxToRem(40);
+        color: #434343;
+      }
+      .grid{
+        position: absolute;
+        top: pxToRem(570);
+        left: 50%;        
+        border:2px solid #bebebe;
+        @include box-sizing(border-box);
+        @include transform(translateX(-50%));
+        padding:pxToRem(8);
+        color: #636363;
+        .wrap{
+          border:2px solid #e9e9e9;
+          @include box-sizing(border-box);
+          padding:pxToRem(30) pxToRem(20);
+          min-height: pxToRem(235); 
+          h3{ 
+            font-size: pxToRem(30);
+            font-weight: bold;
+            &:after{
+              content:"?";
+              display: inline-block;
+              width: pxToRem(38);
+              height: pxToRem(38);
+              line-height: pxToRem(38);
+              vertical-align: top;
+              background-color:#636363;
+              margin: pxToRem(10) 0 0 pxToRem(18);
+              text-align: center;
+              color: #FFFFFF;
+              @include border-radius(50%);
+            }
+          }
+          p{
+            line-height: pxToRem(30);
+            font-size: pxToRem(20);
+          } 
+        }
+      }
+    }
   }
   .custom-indicator{
     width: 100%;
@@ -54,7 +105,7 @@ $img_path:"../../views/explore/images";
     text-align: center;
     position: absolute;
     bottom: pxToRem(110);
-    text-align: center;
+    text-align: center;    
   }
   div.rn-carousel-indicator span{
     color: #dfdfdf;

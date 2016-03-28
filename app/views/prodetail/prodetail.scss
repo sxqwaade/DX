@@ -74,7 +74,10 @@ $img_path:"../../public/images";
       margin: pxToRem(20) auto;
       color: #636363;
       text-align: center;
-      width: pxToRem(615);      
+      width: pxToRem(615);
+      &.p2{
+        text-align: left;
+      }      
     }
   }
   &[data-page='1']{

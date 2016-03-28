@@ -73,7 +73,8 @@
   font-size: 0.29867rem;
   line-height: 0.512rem;
   text-align: center;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  white-space: nowrap; }
 .bottom p a {
   margin: 0 0.512rem;
   color: #FFFFFF; }

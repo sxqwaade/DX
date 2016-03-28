@@ -3,6 +3,21 @@
 $img_path:"../../views/brand/images";
 @include animate-flipInX;
 .brand{
+  @each $textpx in 30, 28, 24, 22 {
+    .font-#{$textpx} {
+      font-size: pxToRem($textpx); 
+    }
+  }
+  .line-height40{
+    line-height: pxToRem(40);
+  }
+  .align-left{
+    text-align: left
+  }
+  .width480{
+    width: pxToRem(480);
+    margin:0 auto;
+  }
   &.en{
     .switch ul li{
       font-size: pxToRem(25);
@@ -17,7 +32,9 @@ $img_path:"../../views/brand/images";
   .switch{
     padding-top:pxToRem(245);
     color: #434343;
-    ul{
+    height: 100%; 
+    @include box-sizing(border-box);   
+    .custom-indicator{
       width: 100%;
       text-align: center;
       display: block;
@@ -38,28 +55,26 @@ $img_path:"../../views/brand/images";
       position: relative;
       min-height: pxToRem(360);
       display: block;
+      min-height: 100%;
+      @include box-sizing(border-box);
       li{
         position: absolute;
         display: block;
-        top: 0;
         font-size: pxToRem(24);
         text-align: center;
         color: #434343;
         line-height: pxToRem(36);
         width: 100%;
         font-weight: normal;
-        margin: 0;
+        margin: 0;        
+        .bottom-img{
+          margin: pxToRem(50) auto pxToRem(30);
+          display: block;
+        }        
       }
     }
   }
-  .bottom-img{
-    width: pxToRem(750);
-    height:pxToRem(463);
-    margin-top: pxToRem(50);
-    background: url("#{$img_path}/brand-bottom.png") no-repeat center top transparent;
-    @include background-size(contain);
-  }
-}
+} 
 
 @include iphone4{
   .brand .bottom-img{
