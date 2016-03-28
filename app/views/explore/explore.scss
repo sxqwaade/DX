@@ -42,7 +42,7 @@ $img_path:"../../views/explore/images";
 }
 .explore-detail{
   @include box-sizing(border-box);
-  padding-top: pxToRem(188);
+  padding-top: pxToRem(140);
   color: #434343;
   .carouselExplore{
     width: 100%;
