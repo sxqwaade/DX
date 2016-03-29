@@ -1,7 +1,7 @@
 /** 
  * @Description: DX 
  * @author: songxiaoqiang 
- * @Update: 2016-03-30 00:03 
+ * @Update: 2016-03-30 01:03 
  */ 
 
 "use strict";angular.module("myApp.brand",["ngRoute"]).config(["$routeProvider",function(a){a.when("/brand",{templateUrl:"views/brand/brand.html",controller:"BrandCtrl"}),a.when("/brand_en",{templateUrl:"views/brand/brand_en.html",controller:"BrandCtrl"})}]).controller("BrandCtrl",["$rootScope","$scope","$location",function(a,b,c){a.closeNav(),b.slides=$(".custom-indicator").attr("data-slides").split(","),b.$parent.carouselIndex=Math.round(c.search().index),$(".nav-list ul>li").removeClass("cur"),$(".nav-list ul>li").eq(0).addClass("cur"),$(".scroll-wrap").scroll(function(){return 0==$(this).scrollTop()?($(".nav-bg").removeClass("fadeInDown"),!1):void $(".nav-bg").addClass("fadeInDown")})}]);

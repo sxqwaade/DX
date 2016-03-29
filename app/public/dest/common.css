@@ -658,11 +658,13 @@ body .nav-content .nav-list ul > li ol {
   margin-top: 0.42667rem;
   height: 0;
   overflow: hidden;
-  display: block; }
+  display: block;
+  opacity: 0; }
 body .nav-content .nav-list ul > li ol.slideDown {
   height: 4.90667rem;
   -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  opacity: 1; }
 body .nav-content .nav-list ul > li ol li {
   font-size: 0.46933rem;
   line-height: 1.06667rem;

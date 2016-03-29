@@ -41,7 +41,8 @@
 .explore .scroll-wrap ul {
   display: block;
   margin-top: 2.66667rem;
-  padding-bottom: 5.44rem; }
+  padding-bottom: 5.44rem;
+  background-color: #FFFFFF; }
 .explore .scroll-wrap ul li:after {
   content: "";
   width: 86%;

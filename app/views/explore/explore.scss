@@ -24,6 +24,7 @@ $img_path:"../../views/explore/images";
       display: block;
       margin-top: pxToRem(125);
       padding-bottom: pxToRem(255);
+      background-color: #FFFFFF;
       li{
         &:after{
           content: "";

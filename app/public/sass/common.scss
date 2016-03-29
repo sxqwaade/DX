@@ -133,9 +133,11 @@ body {
             height: 0;
             overflow: hidden;
             display: block;
+            opacity: 0;
             &.slideDown{
               height: pxToRem(230);
               @include transition(all 0.3s ease);
+              opacity: 1;
             }
             li{
               font-size: pxToRem(22);
