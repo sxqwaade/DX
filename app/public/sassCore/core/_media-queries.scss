@@ -194,6 +194,34 @@
   }
 }
 
+// iphone-5
+//-----------------------------------------------------
+
+@mixin iphone6Plus($orientation: all)
+{
+  $deviceMinWidth: 414px;
+  $deviceMaxWidth: 736px;
+  $devicePixelRatio: 3;
+  $deviceAspectRatio: '414/736';
+
+  @if $orientation == all
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio)
+    {
+      @content;
+    }
+  }
+  @else
+  {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) and (orientation:#{$orientation})
+    {
+      @content;
+    }
+  }
+}
+
 // ipads (all)
 //-----------------------------------------------------
 

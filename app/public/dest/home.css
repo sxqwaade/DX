@@ -93,6 +93,9 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71) {
   body .view-content .index-page {
     background-size: auto 100%; } }
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (device-aspect-ratio: 414 / 736) {
+  body .view-content .index-page {
+    background-size: 120%; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (min--moz-device-pixel-ratio: 1) and (max-width: 1080px), only screen and (-o-min-device-pixel-ratio: 1 / 1) and (max-width: 1080px), only screen and (min-resolution: 96dpi) and (max-width: 1080px), only screen and (min-resolution: 1dppx) and (max-width: 1080px) {
   .index-page {
     background-size: 120%; } }

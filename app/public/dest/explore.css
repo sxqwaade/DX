@@ -44,7 +44,7 @@
   padding-bottom: 5.44rem; }
 .explore .scroll-wrap ul li:after {
   content: "";
-  width: 96%;
+  width: 86%;
   height: 2px;
   background-color: #dfdfdf;
   display: block;
@@ -73,7 +73,7 @@
   color: #434343; }
 .explore-detail .carouselExplore li .grid {
   position: absolute;
-  top: 12.16rem;
+  bottom: 3.2rem;
   left: 50%;
   border: 2px solid #bebebe;
   -webkit-box-sizing: border-box;

@@ -103,6 +103,11 @@ $img_path:"../../views/home/images";
     background-size: (auto 100%);
   }
 }
+@include iphone6Plus{
+  body .view-content .index-page{
+    background-size: (120%);
+  }
+}
 @include hdpi(1){
   @include max-screen(1080px){
     .index-page{

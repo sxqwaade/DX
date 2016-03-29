@@ -27,7 +27,7 @@ $img_path:"../../views/explore/images";
       li{
         &:after{
           content: "";
-          width: 96%;
+          width: 86%;
           height: 2px;
           background-color: #dfdfdf;
           display: block;
@@ -62,7 +62,7 @@ $img_path:"../../views/explore/images";
       }
       .grid{
         position: absolute;
-        top: pxToRem(570);
+        bottom: pxToRem(150);
         left: 50%;        
         border:2px solid #bebebe;
         @include box-sizing(border-box);
