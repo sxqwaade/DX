@@ -86,7 +86,13 @@ $img_path:"../../views/home/images";
     }
   }
 }
-
+.contact-us{
+  @include box-sizing(border-box);
+  padding-top: pxToRem(330);
+  img{
+    width: 100%;
+  }
+}
 @include iphone4{
   .view-content .index-page{
     background-size: (100%);

@@ -11,8 +11,19 @@ angular.module('myApp.home', ['ngRoute'])
         templateUrl: 'views/home/home_en.html',
         controller: 'HomeCtrl'
     });
+    $routeProvider.when('/contact_us', {
+        templateUrl: 'views/home/contact-us.html',
+        controller: 'HomeCtrl'
+    });
 }])
 
-.controller('HomeCtrl', [function() {
-    $(".nav-list ul>li").removeClass("cur");
+.controller('HomeCtrl', ['$rootScope','$location',function($rootScope,$location) {
+    $rootScope.closeNav();
+
+    if($location.url().indexOf("contact_us") > 0){
+        $(".nav-list ul>li").removeClass("cur");
+        $(".nav-list ul>li").eq(4).addClass("cur");
+    }else{
+        $(".nav-list ul>li").removeClass("cur");
+    }
 }]);

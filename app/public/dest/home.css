@@ -79,6 +79,14 @@
   margin: 0 0.512rem;
   color: #FFFFFF; }
 
+.contact-us {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 7.04rem; }
+.contact-us img {
+  width: 100%; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .view-content .index-page {
     background-size: 100%; } }
