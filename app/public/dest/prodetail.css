@@ -72,7 +72,8 @@
   margin: 0.42667rem auto;
   color: #636363;
   text-align: center;
-  width: 13.12rem; }
+  width: 13.12rem;
+  word-wrap: break-word; }
 .wrap .page2 p.p2 {
   text-align: left;
   overflow-y: scroll; }

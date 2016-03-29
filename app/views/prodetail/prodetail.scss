@@ -75,6 +75,7 @@ $img_path:"../../public/images";
       color: #636363;
       text-align: center;
       width: pxToRem(615);
+      word-wrap: break-word;
       &.p2{
         text-align: left;
         overflow-y:scroll;

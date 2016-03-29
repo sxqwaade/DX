@@ -72,7 +72,12 @@ $img_path:"../../views/brand/images";
         .bottom-img{
           margin: pxToRem(50) auto pxToRem(30);
           display: block;
-        }        
+        }
+        &:nth-child(2){
+          .bottom-img{
+            width: pxToRem(542);
+          }
+        }
       }
     }
   }
