@@ -47,7 +47,7 @@
 .brand .width480 {
   width: 10.24rem;
   margin: 0 auto; }
-.brand.en .switch ul li {
+.brand.en .switch .custom-indicator li {
   font-size: 0.53333rem;
   margin: 0 0.192rem; }
 .brand .scroll-wrap {
@@ -92,7 +92,11 @@
   line-height: 0.768rem;
   width: 100%;
   font-weight: normal;
-  margin: 0; }
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0.32rem; }
 .brand .switch .switch-content li .bottom-img {
   margin: 1.06667rem auto 0.64rem;
   display: block; }

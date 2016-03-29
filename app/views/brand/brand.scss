@@ -19,7 +19,7 @@ $img_path:"../../views/brand/images";
     margin:0 auto;
   }
   &.en{
-    .switch ul li{
+    .switch .custom-indicator li{
       font-size: pxToRem(25);
       margin:  0 pxToRem(9);
     }
@@ -66,7 +66,9 @@ $img_path:"../../views/brand/images";
         line-height: pxToRem(36);
         width: 100%;
         font-weight: normal;
-        margin: 0;        
+        margin: 0;
+        @include box-sizing(border-box);
+        padding: 0 pxToRem(15);
         .bottom-img{
           margin: pxToRem(50) auto pxToRem(30);
           display: block;
