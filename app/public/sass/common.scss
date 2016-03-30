@@ -220,7 +220,7 @@ body {
   width: pxToRem(382);
   height: pxToRem(24);
   position: absolute;
-  bottom: pxToEm(35);
+  bottom: pxToEm(15);
   left: 50%;
   @include transform(translateX(-50%));
   background: url("#{$img_path}/slide_bottom.png") no-repeat center top transparent;

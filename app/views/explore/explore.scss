@@ -63,8 +63,8 @@ $img_path:"../../views/explore/images";
       }
       .grid{
         position: absolute;
-        bottom: pxToRem(150);
-        left: 50%;        
+        bottom: pxToRem(80);
+        left: 50%;
         border:2px solid #bebebe;
         @include box-sizing(border-box);
         @include transform(translateX(-50%));
@@ -73,7 +73,7 @@ $img_path:"../../views/explore/images";
         .wrap{
           border:2px solid #e9e9e9;
           @include box-sizing(border-box);
-          padding:pxToRem(30) pxToRem(20);
+          padding:pxToRem(15) pxToRem(20) pxToRem(30);
           min-height: pxToRem(235); 
           h3{ 
             font-size: pxToRem(30);
@@ -105,7 +105,7 @@ $img_path:"../../views/explore/images";
     height: pxToRem(20);
     text-align: center;
     position: absolute;
-    bottom: pxToRem(110);
+    bottom: pxToRem(50);
     text-align: center;    
   }
   div.rn-carousel-indicator span{
