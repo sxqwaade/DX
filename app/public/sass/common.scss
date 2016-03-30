@@ -281,6 +281,9 @@ body {
   margin-top: pxToRem(20);
   color: #ffd40a;
 }
+.spinner-icon{
+  display: none!important;
+}
 @keyframes mobileR{
   0% {
     -webkit-transform: rotate(-90deg);

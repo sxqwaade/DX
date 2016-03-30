@@ -788,6 +788,9 @@ body .nav-content.show .nav-list {
   margin-top: 0.42667rem;
   color: #ffd40a; }
 
+.spinner-icon {
+  display: none !important; }
+
 @keyframes mobileR {
   0% {
     -webkit-transform: rotate(-90deg); }
