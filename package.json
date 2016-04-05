@@ -14,6 +14,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-excel-vocabulary": "^1.0.1",
     "http-server": "^0.6.1",
     "jasmine-core": "^2.3.4",
     "json.excel": "0.0.3",
@@ -28,7 +29,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server app/  -a 172.16.14.192 -p 8000 -c-1",
+    "start": "http-server app/  -a localhost -p 8000 -c-1",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",

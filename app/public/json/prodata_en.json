@@ -44,7 +44,6 @@
             "description": "In the human body the abundance of coenzyme Q10 decreases with age. This decrease, combined with unhealthy habits may affect the health of your heart. Coenzyme Q10 is known as the guardian of the heart and builds up immunity. It has antioxident properties, which may delay aging and improve overall vitality"
         }
     },
-    "舒缓调理": {},
     "提升免疫力": {
         "Odourless High Strength Wild Fish Oil": {
             "img_name": "shenhaiyuyou",
@@ -63,7 +62,6 @@
             "description": "Organic spirulina is a natural health care product. It is an excellent source of natural protein discovered in recent times which is rich in properties such as linolenic acid and a-Linolenic acid. \r\nSpirulina is an organic food growing in natural environments with a rich source of nutrients, free from any chemical constituents or artificial additives.\r\nThe protein content in organic spirulina boosts the body’s immune system.  Additional benefits are blood acid-base balance, aiding to lower cholesterol, prevent anemia and assist in fat metabolism."
         }
     },
-    "美容养颜": {},
     "内脏保健": {
         "Lung Health Support": {
             "img_name": "qingfeiling",
@@ -90,6 +88,5 @@
             "ingredient": "Glucosamine sulfate (1500mg/tablet)",
             "description": "Famous for its reputation of being a joint lubricant, Glucosamine Sulfate has gained momentum over the years as a guardian of joint health. \r\nThe human joints are subject to wear and tear which may result in series of joint problems. As a natural component of cartilage matrix, glucosamine sulfate readily assists with rheumatism, and alleviates joint pain caused by osteoarthritis."
         }
-    },
-    "明目健脑": {}
+    }
 }

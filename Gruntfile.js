@@ -123,7 +123,15 @@ module.exports = function(grunt) {
         excel_vocabulary: {
             first: {
                 options: {
-                    beautify: true
+                    beautify: true,
+                    set: function (resultJsonObject, columnName, sheetName, key, value) {
+                        resultJsonObject[sheetName] = resultJsonObject[sheetName] || {};
+                        if (!resultJsonObject.hasOwnProperty(columnName)) {
+                            resultJsonObject[sheetName][columnName] = resultJsonObject[sheetName][columnName] || {};
+                        }
+
+                        resultJsonObject[sheetName][columnName][key] = value;
+                    }
                 },
                 files: [
                     { src: 'app/public/json/prodata.xlsx', dest: 'app/public/json/prodata.json' },
